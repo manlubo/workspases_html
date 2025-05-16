@@ -41,12 +41,19 @@
 - ol : 순서
 
 ### table
-> tr : 행의 개수
-> td : 셀의 개수
-> th : 제목 역할
-> thead : 테이블 헤드 영역
-> tbody : 테이블 바디 영역
-> tfoot : 테이블 바닥 영역
-> caption : 표 제목
-> rowspan : 세로 병합
-> colspan : 가로 병합
+> - tr : 행의 개수
+> - td : 셀의 개수
+> - th : 제목 역할
+> - thead : 테이블 헤드 영역
+> - tbody : 테이블 바디 영역
+> - tfoot : 테이블 바닥 영역
+> - caption : 표 제목
+> - rowspan : 세로 병합
+> - colspan : 가로 병합
+
+### form
+> - fieldset : 양식 요소 그룹화
+> - legend : 그룹의 제목
+> - 
+> - 
+> - 
