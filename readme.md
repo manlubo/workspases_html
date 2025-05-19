@@ -54,6 +54,17 @@
 ### form
 > - fieldset : 양식 요소 그룹화
 > - legend : 그룹의 제목
-> - 
-> - 
-> - 
+> ##### input
+> - name 속성을 통해 이름을 정의
+> - text : 글 입력
+> - password : 비밀번호 입력
+> - email : 이메일 입력
+> - tel : 전화번호 입력
+> - radio : 라디오 버튼
+> - checkbox : 체크박스
+> - submit : 전송
+> - reset : 초기화
+> - button : 버튼
+> - image : 이미지 버튼
+> - file : 첨부파일
+> - required : 필수값
