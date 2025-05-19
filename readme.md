@@ -60,11 +60,31 @@
 > - password : 비밀번호 입력
 > - email : 이메일 입력
 > - tel : 전화번호 입력
-> - radio : 라디오 버튼
-> - checkbox : 체크박스
+> - radio : 라디오 버튼 - 기본값은 checked
+> - checkbox : 체크박스 - 기본값은 checked
 > - submit : 전송
 > - reset : 초기화
 > - button : 버튼
 > - image : 이미지 버튼
-> - file : 첨부파일
+> - file : 첨부파일 - multiple : 한번에 여러파일 속성 accept : 타입 값 지정 속성
 > - required : 필수값
+> - range : 범위 지정 - min, max, step 속성을 같이 사용
+> - number : 숫자 입력 - - min, max, step 속성을 같이 사용
+> - 반드시 label을 함께 쓰는 것이 좋다
+> - readonly : 읽기전용
+> - disabled : 접근불가
+> - autocomplete : 자동완성
+> - novalidate : 유효성 검증 무시
+> - tabindex : 탭 포커스 순서 조정
+> - autofocus : 접속시 자동으로 포커싱
+> - autocomplete : 자동완성 on / off로 설정
+> - placeholder : 텍스트에 보이는 값
+> - pattern : 정규식 적용
+> - value : input:text에 기본값 배정
+> ##### select
+> - optgroup : 옵션 그룹을 설정
+> - option : 셀렉트 요소들 작성
+
+
+#### div
+- css에서 활용하기 위해 그룹을 묶는데 사용 
