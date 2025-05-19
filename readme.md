@@ -86,5 +86,46 @@
 > - option : 셀렉트 요소들 작성
 
 
-#### div
+### div
 - css에서 활용하기 위해 그룹을 묶는데 사용 
+
+### codex
+- coder와 decoder를 합성한 말
+- coder를 통해 코딩
+- decoder를 통해 디코딩
+
+
+---
+# css
+### 내부 스타일 시트
+- html 내부의 style 태그 내부에 css작성
+
+### 외부 스타일 시트
+- html 외부의 .css파일 내부에 css작성
+
+### 인라인 스타일
+- 속성을 부여할 태그 내부에 css 작성
+
+### 태그 선택자
+- 태그를 직접 작성하여 css 부여 ex) p {color: red;}
+
+### id 선택자
+- 태그에 id를 작성하고 아이디를 선택해 css 부여 ex) #title {color : blue;}
+
+### class 선택자
+- 태그에 class를 작성하고 클래스를 선택해 css 부여 ex) .dtxt {font-size : 3em;}
+
+### 전체 선택자
+- 모든 태그를 선택해 css부여 ex) * {border: 3px solid;}
+
+### 자식 선택자
+- 바로 1뎁스 밑의 태그 선택자 ex) body > p {}
+
+### 자손 선택자
+- 하위 뎁스를 선택 ex) body p {}
+
+### 인접 선택자
+- 자신을 제외한 다음에나오는 태그를 선택 ex) td + td {width : 300px;}
+
+### 선택자의 우선순위
+- id > class > 가상선택자 > 태그 선택자 > 전체선택자
