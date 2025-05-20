@@ -138,3 +138,36 @@
 ### 선택자의 우선순위
 - id > class > 가상선택자 > 태그 선택자 > 전체선택자
 
+### shadow
+> ##### text-shadow
+> - (우측, 하단, 번짐정도, (색상,투명도))로 사용 ex) text-shadow: 4px 4px #000a;
+
+### 문단 스타일
+##### text-align
+- left : 왼쪽 정렬
+- right : 오른쪽 정렬
+- center : 가운데 정렬
+- justify : 양쪽 정렬
+
+##### vertical-align
+- top : 상단에 위치
+- middle : 중간에 위치
+- bottom : 하단에 위치
+
+##### white-space
+- normal : 기본
+- nowrap : 박싱을 하지않음
+- pre : 작성한 대로 나옴
+- pre-wrap : 작성하지만 박스의 사이즈에 따라 개행은 함
+- pre-line : 작성한대로 나오지만 공백은 생략
+
+##### display
+- block : 요소를 블록으로 변경
+- inline : 요소를 인라인으로 변경
+- inline-block : 줄바꿈은 일어나지 않지만 block요소만 사용할 수 있는 속성 사용가능
+- none : 숨김
+
+##### visibility
+- visible : 요소가 보이게 함
+- hidden : 공간은 유지한채로 요소가 보이지 않도록 함
+
