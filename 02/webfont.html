@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbit&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('font/PretendardGOVVariable.woff2');
+        }
+        @font-face {
+            font-family: 'Suit';
+            src: url('font/SUIT-Variable.ttf');
+        }
+        
+        .after-font {font-family: 'Pretendard';}
+        .after-font2 {font-family: 'Suit';}
+        .after-font3 {font-family: 'Orbitron'; font-display: block;}
+        .after-font4 {font-family: 'Orbit'; font-display: block;}
+        /* 
+            font, img, mp4 등에서 발생하는 글리치
+            특히 폰트관련에서 FOIT(Flash Of Invisible Text)
+        */
+    </style>
+</head>
+<body>
+    <h1>폰트 적용전 텍스트</h1>
+    <h1 class="after-font">폰트 적용후 텍스트</h1>
+    <h1 class="after-font2">폰트 적용후 텍스트</h1>
+    <h1 class="after-font3">font register text</h1>
+    <h1 class="after-font4">폰트 적용후 텍스트</h1>
+</body>
+</html>
