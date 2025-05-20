@@ -97,37 +97,39 @@
 
 ---
 # css
-### 내부 스타일 시트
+### 위치
+##### 내부 스타일 시트
 - html 내부의 style 태그 내부에 css작성
 
-### 외부 스타일 시트
+##### 외부 스타일 시트
 - html 외부의 .css파일 내부에 css작성
 
-### 인라인 스타일
+##### 인라인 스타일
 - 속성을 부여할 태그 내부에 css 작성
 
-### 태그 선택자
+### 선택자
+##### 태그 선택자
 - 태그를 직접 작성하여 css 부여 ex) p {color: red;}
 
-### id 선택자
+##### id 선택자
 - 태그에 id를 작성하고 아이디를 선택해 css 부여 ex) #title {color : blue;}
 
-### class 선택자
+##### class 선택자
 - 태그에 class를 작성하고 클래스를 선택해 css 부여 ex) .dtxt {font-size : 3em;}
 
-### 전체 선택자
+##### 전체 선택자
 - 모든 태그를 선택해 css부여 ex) * {border: 3px solid;}
 
-### 자식 선택자
+##### 자식 선택자
 - 바로 1뎁스 밑의 태그 선택자 ex) body > p {}
 
-### 자손 선택자
+##### 자손 선택자
 - 하위 뎁스를 선택 ex) body p {}
 
-### 인접 선택자
+##### 인접 선택자
 - 자신을 제외한 다음에나오는 태그를 선택 ex) td + td {width : 300px;}
 
-### 가상 클래스 선택자
+##### 가상 클래스 선택자
 - link : link일 때
 - visited : 방문했을 때
 - active : 눌렀을 때
@@ -135,7 +137,7 @@
 - focus : 초점이 있었을 때
 
 
-### 선택자의 우선순위
+##### 선택자의 우선순위
 - id > class > 가상선택자 > 태그 선택자 > 전체선택자
 
 ### shadow
@@ -171,3 +173,31 @@
 - visible : 요소가 보이게 함
 - hidden : 공간은 유지한채로 요소가 보이지 않도록 함
 
+### 배경
+##### background-color
+- 헥스코드, rgb 등 사용가능
+
+##### background-image
+- url() : 이미지 경로 작성
+
+
+##### repeat (반복여부)
+- no-repeat : 배경이미지 한개만 배치
+- repeat-x : 배경이미지 가로만 반복
+- repeat-y : 배경이미지 세로만 반복
+
+##### background-position (요소에 이미지 배치 위치)
+- px, %, center, bottom, top, left, top 사용가능
+- fixed : 화면에 고정
+- scroll : 스크롤시 따라오지 않음(기본값)
+
+##### background-size
+- px : 사용가능하지만 찌그러질 수 있음
+- auto : 기본 비율, 남는공간은 비움
+- contain : 잘리지 않도록 배치, 남는공간 비움
+- cover : 빈공간없이 꽉 채우고 나머지 잘림(자주 사용)
+
+##### background-origin(이미지 시작위치), clip(배경 영역지정)
+- border-box : 테두리 기준
+- padding-box : 패딩 기준
+- content-box : 컨텐츠 기준
