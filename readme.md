@@ -278,4 +278,10 @@ box-shadow: 8px 15px 10px 7px inset #9999;
 - 확대, 축소시키는 속성
 
 ### transition
-- delay
+- ease, linear 등 설정된 속성이나, cubic-bezier를 이용해 커스텀된 속성 사용가능
+- transition-timing-function을 사용해 딜레이를 설정 가능
+
+### animation
+- ex) animation: rotate(keyframe 이름) .5s linear infinite;
+##### @keyframes
+- 0~100% 의 형태를 정의하거나 to, from으로 형태를 정의함

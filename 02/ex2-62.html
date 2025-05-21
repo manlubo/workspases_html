@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes sample{
+            0% {background: firebrick; transform:  translate(0,0);}
+            50% {background: cornflowerblue; transform:  translate(30px,20px);}
+            100% {background: forestgreen; transform:  translate(0,0);}
+        }
+        @keyframes rotate{
+            to {transform: rotateZ(720deg);}
+        }
+        p {
+            width: 100px; height: 100px; padding: 10px; background: firebrick;
+            animation-name: sample;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-delay: 3s;
+        }
+        img {
+            animation: rotate .5s linear infinite;
+        }
+        
+    </style>
+</head>
+<body>
+    <p>
+        Animation..
+    </p>
+    <img src="https://i.namu.wiki/i/7bVj-o2PntbgA9VHIHv__-2-P_ifEd0cdXOmoC5UrEBwe8pOa9tBjs3eYekAOd_OeJNKb77xaTeGcI0wn7UUQA.webp">
+</body>
+</html>
