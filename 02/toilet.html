@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {display: inline-block; width: 100px; height: 100px; border-radius: 50%;}
+        .man {background-color: blue; position: relative;}
+        .man::after {display: block; content: ''; width: 0; border: 50px solid transparent; border-top: 80px solid blue; position: absolute; bottom: -150px;}
+        .woman {background-color: red; position: relative; margin-left: 40px;}
+        .woman::after {display: block; content: ''; width: 0; border: 50px solid transparent; border-bottom: 80px solid red; position: absolute; bottom: -100px;}
+    </style>
+</head>
+<body>
+    <div class="man"></div>
+    <div class="woman"></div>
+</body>
+</html>

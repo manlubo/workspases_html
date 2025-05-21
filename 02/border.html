@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box {width: 200px; height: 100px; background-color: red; margin: auto; border-radius: 15px;}
-        .box1 {width: 0px; height: 0px; border: 20px solid transparent;
-            border-top-color: red;  margin: auto;
-        }
+        .box {width: 200px; height: 100px; background-color: black; margin: 50px auto; border-radius: 15px; max-width: 300px; position: relative; color: white; text-align: center; line-height: 100px;}
+        .box::after {display: block; content: ''; position: absolute; width: 0px; height: 0px; border: 10px solid transparent;  border-top: 30px solid black;;
+        bottom: -30px; left: 25px; transform: skewX(-25deg);}
+        .box.me::after {left: 150px; transform: skewX(25deg);}
+
     </style>
 </head>
 <body>
-    <div class="box"></div>
-    <div class="box1"></div>
+    <div class="box">남이 말함</div>
+    <div class="box me">내가말함</div>
 </body>
 </html>

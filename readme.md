@@ -234,3 +234,5 @@
 - style : solid, dashed, double, none 등 사용해 선의 모양 설정
 - width : 굵기 설정
 - color : 컬러 설정 (기본값은 글자 색)
+- border-radius : 둥글기 설정 값은 왼쪽 위 꼭짓점부터 시계방향 순
+- 값과 값 사이 / 기호를 넣어 타원 생성 할 수 있음
