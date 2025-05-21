@@ -236,3 +236,46 @@
 - color : 컬러 설정 (기본값은 글자 색)
 - border-radius : 둥글기 설정 값은 왼쪽 위 꼭짓점부터 시계방향 순
 - 값과 값 사이 / 기호를 넣어 타원 생성 할 수 있음
+
+##### border-image
+- url('이미지링크') 
+- round : 꼭짓점부분을 제외한 이미지 반복(이미지를 조금씩 늘려서 자연스럽게)
+- repeat : 꼭짓점 제외 이미지 반복
+- stretch : 꼭짓점 부분을 제외하고 이미지를 늘려버림 
+
+##### outline
+- border와 동일하나, 실제 공간을 가지지 않는다.
+- outline-offset : border와 outline 사이의 간격을 줄 때 사용
+
+##### box-sizing
+- padding, border값까지 개체의 크기에 포함시키기 위해 사용
+
+
+##### box-shadow
+box-shadow: 8px 15px 10px 7px inset #9999;
+- 8px : x축
+- 15px : y축
+- 10px : 그림자의 흐릿함 정도
+- 7px : 그림자의 확장 정도
+- inset : 이너쉐도우
+- #9999 : 그림자의 색상(값을 안주면 글자색이 기본값)
+
+##### resize
+- 박스의 모서리를 잡아 크기조정이 가능하게 하는 것
+- none (주로 없애기 위해 사용)
+
+##### appearance
+- ui 호환성을 맞추기 위해 사용
+
+### transform
+##### translate
+- 이동시키는 속성
+
+##### rotate
+- 회전 시키는 속성
+
+##### scale
+- 확대, 축소시키는 속성
+
+### transition
+- delay
