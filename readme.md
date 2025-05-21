@@ -201,3 +201,15 @@
 - border-box : 테두리 기준
 - padding-box : 패딩 기준
 - content-box : 컨텐츠 기준
+
+### gradient
+##### linear-gradient
+- 선형 그라디언트 (각도, 색상 범위, 색상 범위) ex) background-image: linear-gradient(45deg, white 30%, red 100%);
+- repeating-linear-gradient : 범위가 끝나면 처음부터 반복
+
+##### radial-gradient
+- closest-side : 가장 가까운 변 까지 퍼짐
+- closest-corner : 가장 가까운 꼭짓점 까지 퍼짐
+- farthest-side : 가장 먼 변까지 퍼짐
+- farthest-corner : 가장 먼 꼭짓점 까지 퍼짐
+- repeating-radial-gradient : 범위가 끝나면 처음부터 반복
