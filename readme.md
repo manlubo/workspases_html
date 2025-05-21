@@ -213,3 +213,24 @@
 - farthest-side : 가장 먼 변까지 퍼짐
 - farthest-corner : 가장 먼 꼭짓점 까지 퍼짐
 - repeating-radial-gradient : 범위가 끝나면 처음부터 반복
+
+### box
+##### width, height
+- max-width : 최대 넓이
+- min-width : 최소 넓이
+- max-height : 최대 높이
+- min-height : 최소 높이
+
+##### padding
+- 테두리와 요소사이의 거리
+- 값 순서는 위 오른쪽 밑 왼쪽  순서
+
+##### margin
+- 테두리와 다음 박스 사이의 여백(요소의 크기값에 포함되지 않음)
+- 세로는 마진값 곂침현상(컬렉싱)이 발생
+- auto : 자동으로 좌우 최대값 배정(블럭의 중앙배치 위해 사용)
+
+##### border
+- style : solid, dashed, double, none 등 사용해 선의 모양 설정
+- width : 굵기 설정
+- color : 컬러 설정 (기본값은 글자 색)
