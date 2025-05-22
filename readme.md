@@ -304,7 +304,7 @@ box-shadow: 8px 15px 10px 7px inset #9999;
 
 ##### position
 - cpu사용 , translate는 gpu 사용
-- static : 기본ㄱ밧
+- static : 기본값
 - relative : absolute의 부모역할
 - absolute : 원래 위치에서 떼어내서 부모의 기준으로 위치를 지정
 - fixed : 요소를 screen 기준으로 지정
