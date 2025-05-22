@@ -310,6 +310,19 @@ box-shadow: 8px 15px 10px 7px inset #9999;
 - fixed : 요소를 screen 기준으로 지정
 - z-index : 값이 클수록 위로 올라감 음수값을 쓰면 가장뒤로감(static은 영향x)
 ##### flex
-
+- flex-basis : 기본값
+- flex-grow : 늘어날때 배율
+- flex-shrink : 공간이 부족할 떄 줄어드는 배율
+###### flex-wrap
+- wrap : 다음줄로 넘어감
+- nowrap : 넘어가지 않음
 
 ##### grid
+
+
+### 미디어쿼리
+##### @media
+- all : 모든 미디어 장치에 사용(기본값)
+- print : 프린터
+- screen : 화면 ex) @media screen and (min-width:1200px){}
+- speech : 스크린리더기 
