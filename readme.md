@@ -136,6 +136,15 @@
 - hover : 마우스 올렸을 때
 - focus : 초점이 있었을 때
 
+##### 가상요소 선택자
+- nth-child : 자식중 ~번째
+- nth-of-type : 타입중 ~번째
+- before : content + '내용' 을 사용하여 앞에 내용 추가 가능
+- after : content + '내용' 을 사용하여 뒤에 내용 추가 가능
+
+##### 속성 선택자
+- 속성 값, 속성유무를 []안에 넣어 선택자로 사용
+- ex) p[title] {color: red;}
 
 ##### 선택자의 우선순위
 - id > class > 가상선택자 > 태그 선택자 > 전체선택자
@@ -285,3 +294,22 @@ box-shadow: 8px 15px 10px 7px inset #9999;
 - ex) animation: rotate(keyframe 이름) .5s linear infinite;
 ##### @keyframes
 - 0~100% 의 형태를 정의하거나 to, from으로 형태를 정의함
+
+### layout
+##### float
+- 요소를 좌측이나 우측에 붙이고 아래 내용이 주변을 흐르게 설정
+- left : 좌에서 우로 흐르게
+- right : 우에서 좌로 흐르게
+- clear : 영향을 받지않아야 하는 시점부터 해당 태그에 적용
+
+##### position
+- cpu사용 , translate는 gpu 사용
+- static : 기본ㄱ밧
+- relative : absolute의 부모역할
+- absolute : 원래 위치에서 떼어내서 부모의 기준으로 위치를 지정
+- fixed : 요소를 screen 기준으로 지정
+- z-index : 값이 클수록 위로 올라감 음수값을 쓰면 가장뒤로감(static은 영향x)
+##### flex
+
+
+##### grid
