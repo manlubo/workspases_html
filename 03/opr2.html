@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+    <script>
+        // var arr = ['red', 'orange', 'green', 'blue']
+        // document.write("<ul>")
+        // for(var i = 2; i <= 9; i++){
+        //     for(var j = 1; j <= 9; j++){
+        //         var rand = parseInt(Math.random() * arr.length);
+        //         document.write(`<li style = 'color : ${arr[rand]}'>${i} * ${j} = ${i * j}</li>`)
+        //     }
+        // }
+        // document.write("</ul>");
+        
+        // 사용자로 부터 숫자를 입력받고 prompt
+        // 1부터 해당숫자까지의 홀수의 합계를 출력 alet
+
+        var s = prompt('숫자를 하나 입력해주세요') - 0;
+        var result = 0;
+        for(var i = 1; i <= s; i++){
+            if(i % 2 == 1){
+                result += i;
+            }
+        }
+        alert(`1부터 해당 숫자까지의 홀수 합계는 ${result}입니다.`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

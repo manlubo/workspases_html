@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .login-wrapper {width: 353px; margin: auto;}
+        .btn {font-family: 'NEXON Lv1 Gothic OTF'; display: block;  color: white;
+             font-weight: bold; transition: all .3s;}
+        .btn:hover{background: #0077ff;}
+        a {text-decoration: none; }
+
+        .major{ height: 38px; background-color: black; text-align: center;padding-top: 22px;}
+        .sub {display: flex; gap: 2px; margin-top: 8px;}
+        .sub a{height: 34px; padding-top: 18px; background-color: #4a4e57; display: inline-block; flex: 1; text-align: center;}
+
+        .ant {background-color: #f8f9fa; height: 32px; padding-top: 10px; display: flex; justify-content: center; margin-top: 16px; gap: 8px;}
+        .ant p{margin: 0; font-size: 13px; color: #777;}
+        .ant a{width: 22px; height: 22px;  background: url(https://rs.nxfs.nexon.com/home/images/main/set_login.png) no-repeat 0 0;
+        background-size: 100px auto ; transition: all .3s;}
+        .ant a:hover{opacity: .5;}
+        .ant a:nth-of-type(1) {background-position: 0 -50px; margin-left: 12px;}
+        .ant a:nth-of-type(2) {background-position: 0 -100px;}
+        .ant a:nth-of-type(3) {background-position: 0 -150px;}
+        .ant a:nth-of-type(4) {background-position: 0 -200px;}
+
+        .sign {display: flex; margin-top: 8px; justify-content: space-between;}
+        .sign a{color: #737881; font-size: 13px; font-weight: 400; transition: all .3s;}
+        .sign div:nth-child(1) a{margin-right: 12px;}
+        .sign a:hover{color: #0077ff;}
+        .sign div:nth-child(2) a{position: relative;}
+        .sign div:nth-child(2) a p{position: absolute; width: 337px; height: 16px; padding: 8px; right: 0; display: block; background-color: rgba(27,31,36); color: #eee;
+        transition: all .3s; text-align: center;}
+        .sign div:nth-child(2) a p:hover{color: #0077ff;}
+        .sign div:nth-child(2) a p::after{content: ''; display: block; position: absolute; border: 8px solid transparent; border-bottom: 12px solid rgba(27,31,36); top: -16px; right: 14px;}
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        <a href="https://nxlogin.nexon.com/common/login.aspx?redirect=https%3a%2f%2fwww.nexon.com" class="btn major">NEXON ID 로그인</a>
+        <div class="sub">
+            <a class="btn" href="https://nxlogin.nexon.com/common/login.aspx?sec=pcbang&redirect=https%3a%2f%2fwww.nexon.com">일회용 로그인</a>
+            <a class="btn" href="https://nxlogin.nexon.com/common/login.aspx?sec=qr&redirect=https%3a%2f%2fwww.nexon.com">QR 로그인</a>
+        </div>
+        <div class="ant">
+            <p>다른 계정 간편 로그인</p>
+            <a href="https://www.nexon.com/Home/Game#"></a>
+            <a href="https://www.nexon.com/Home/Game#"></a>
+            <a href="https://www.nexon.com/Home/Game#"></a>
+            <a href="https://www.nexon.com/Home/Game#"></a>
+        </div>
+        <div class="sign">
+            <div>
+            <a href="https://member.nexon.com/find/findid.aspx">넥슨 ID찾기</a>
+            <a href="https://member.nexon.com/find/findpwd.aspx">비밀번호 찾기</a>
+            </div>
+            <div>
+            <a href="https://member.nexon.com/join/join.aspx">회원가입
+                <p>지금 회원가입하시고 40개 넥슨게임을 무료로 플레이하세요</p>
+            </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

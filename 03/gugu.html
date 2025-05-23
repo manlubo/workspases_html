@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var i = 2;
+        var j = 1;
+        document.write("<ul>");
+            while(i <= 9){ 
+                document.write(`<li>${i} * ${j} = ${i * j++}</li>`);
+                if(j == 10){
+                    j = 1;
+                    i++;
+                }
+            }
+        document.write("</ul>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
