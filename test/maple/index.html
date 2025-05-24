@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .user-wrapper {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="user-wrapper">
+        <img src="img/user/stand1_0.png" alt="user" class="user" id="user">
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const character = document.getElementById("user");
+            const frameCount = 4;
+            let currentFrame = 0;
+
+            setInterval(() => {
+                currentFrame = (currentFrame + 1) % frameCount;
+                character.src = `img/user/stand1_${currentFrame}.png`;
+            }, 250); // 0.25초
+        });
+    </script>
+</body>
+</html>
