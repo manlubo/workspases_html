@@ -105,5 +105,31 @@
         </div>
         <button>등록</button>
     </form>
+
+    <script>
+        // 학생리스트에 학생 추가
+        document.querySelector("form").addEventListener("submit",function(){
+            event.preventDefault();
+            students.push(new Student(this.name.value, this.kor.value/1, this.eng.value/1, this.mat.value/1));
+            list();
+        })
+
+        // 학생 리스트에서 제거
+        document.querySelector("tbody").addEventListener("click", function(){
+            if(event.target.tagName === "BUTTON"){
+                const no = event.target.closest("tr").querySelector("td").innerText;
+                console.log(no);
+                let idx = -1;
+                for(let i = 0; i < students.length; i++){
+                    if(students[i].no == no){
+                        idx = i;
+                    }
+                }
+                students.splice(idx,1);
+                list(); 
+            }
+            
+        });
+    </script>
 </body>
 </html>
