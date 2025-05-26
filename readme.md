@@ -360,7 +360,8 @@ box-shadow: 8px 15px 10px 7px inset #9999;
 - 호이스팅(hoisting) : 본문에 선언한 함수를 실행시 최상단으로 끌어올림 (익명함수는 제외)
 - IIFE(즉시 실행 함수) : (function(a) {console.log('파라미터의 값 : ' + a)})();
 - arguments : 배열처럼 사용되는 객체 (유사배열)
-
+- arrow function : 익명함수의 대체 es6문법 ex) abs = a => a > 0 ? a : -a;
+- scope : 전역변수(global variable), 지역변수(local vartiable)
 
 ##### undifined
 - 변수 선언 시 값 지정 안하면 나오는 값
@@ -382,12 +383,23 @@ box-shadow: 8px 15px 10px 7px inset #9999;
 ### 변수
 ##### var
 - es5 이전 변수 선언방법
+- 함수 범위, 재선언 등 문제가 많음
+- 함수블록 내에서만 지역변수가 존재
+
 ##### let
 - es6 이후 변수 선언방법
+- 자바의 변수와 비슷, 재선언 불가, 함수 범위 제한 등
 
 ### 상수
 ##### const
 - es6 이후 상수 선언 방법
 - 값 재할당 불가능
+- 같은 블록에서는 이미 선언한 변수를 중복 선언 불가
 
-
+### 내장함수
+##### 인코딩/디코딩
+- encodeURIComponent() - 영문, 숫자 ()-_.~*!' 을 제외한 문자 인코딩
+- decodeURIComponent() - encodeURIComponent()을 디코딩하는 함수
+##### 숫자 유무한 값 판별
+- isNan() : 숫자인지 아닌지 판별
+- isFinite() : 무한인지 아닌지 판별

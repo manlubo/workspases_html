@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 특정 시간
+        window.onload = _ => 
+            setInterval(_ => document.querySelector("h2").innerText = new Date().toLocaleString(), 1000);
+    </script>
+</head>
+<body>
+    <h2>시간이 표시됩니다.</h2>
+</body>
+</html>

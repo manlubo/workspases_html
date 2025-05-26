@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAxMDRfMjQ3%2FMDAxNzA0MzU4NjgyOTI2.6WizyA_7fNTisZG1XbLcNmx6flEvcp_y-ReVZ47vVzcg.hFMQuYE8PNlrrV3HalEOc1751Jx4_rvQSt02FILj1TAg.GIF.speer11%2F%25B9%25AB%25B7%25AE1.gif&type=sc960_832_gif">
+    <hr>
+    <input><button>이미지 변환</button>
+    <script>
+        document.querySelector("button").addEventListener("click", function(){
+            const input = document.querySelector("input").value;
+            const img = document.querySelector("img");
+            img.src = input;
+            img.style.border = '1px solid';
+            img.style.borderRadius = '14px';
+            // img.style["border-radius"] = '14px';
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td, th {border: 1px solid;}
+        table{border-collapse: collapse; margin: 0 auto; max-width: 1000px; width: 100%;}
+        td {padding: 20px; text-align: center;}
+        form {border: 1px solid; padding: 20px; max-width: 1000px; margin: 0 auto; box-sizing: border-box;}
+        form input {padding: 10px; width: 97.5%;}
+        form button {margin-top: 20px; width: 100%; padding: 12px 0;}
+    </style>
+    <script>
+        // 학생 리스트 생성
+        const students = [];
+        // 생성자
+        
+        function no(){
+            return students.length == 0 ? 1 : students[students.length - 1].no + 1;
+        }
+        function Student(name, kor, eng, mat) {
+            this.no = no();
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.mat = mat;
+            this.total = function() {return this.kor + this.eng + this.mat;}
+            this.avg = function() {return this.total() / 3;}
+        }
+
+        // 초기데이터
+        students.push(new Student('새똥이', 20, 30, 55));
+        students.push(new Student('소똥이', 20, 52, 55));
+        students.push(new Student('말똥이', 30, 44, 55));
+
+        // 화면에 리스트 보여주기
+        function list(){
+            const tbody = document.querySelector("tbody");
+            let str = "";
+            for(let i = 0; i < students.length; i++){
+                str += "<tr>";
+                str += `<td>${students[i].no}</td>`;
+                str += `<td>${students[i].name}</td>`;
+                str += `<td>${students[i].kor}</td>`;
+                str += `<td>${students[i].eng}</td>`;
+                str += `<td>${students[i].mat}</td>`;
+                str += `<td>${students[i].total()}</td>`;
+                str += `<td>${students[i].avg()}</td>`;
+                str += `<td><button>삭제</button></td>`;
+                str += "</tr>"
+            }
+            tbody.innerHTML = str;
+        }
+        window.onload = function(){
+            list();
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>학번</th>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+                <th>총점</th>
+                <th>평균</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>새똥이</td>
+                <td>30</td>
+                <td>40</td>
+                <td>50</td>
+                <td>120</td>
+                <td>40</td>
+                <td><button>삭제</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <form>
+        <div>
+            <p>이름</p>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <p>국어</p>
+            <input type="text" name="kor" id="kor">
+        </div>
+        <div>
+            <p>영어</p>
+            <input type="text" name="eng" id="eng">
+        </div>
+        <div>
+            <p>수학</p>
+            <input type="text" name="mat" id="mat">
+        </div>
+        <button>등록</button>
+    </form>
+</body>
+</html>
