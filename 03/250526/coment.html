@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {border: 1px solid; margin: 0; padding: 0;}
+        li {list-style: none; padding: 10px 0 10px 16px;}
+        ul li:not(:first-of-type) {border-top: 1px solid;}
+    </style>
+    <script>
+        // 배열생성
+        const comm = [];
+
+        // 생성자
+        function Comment(n){
+            this.message = n;
+        }
+
+        // 기본값 배정
+        comm.push(new Comment("안녕하세요"));
+        comm.push(new Comment("반가워요"));
+
+
+        // 보여주기
+        function list(){
+            const ul = document.querySelector("ul");
+            
+            let str = "";
+            for(let i = 0; i < comm.length; i++){
+                str += `<li>${comm[i].message}</li>`;
+            }
+            ul.innerHTML = str;
+        }
+        window.onload = function(){
+            list();
+        }
+
+    </script>
+</head>
+<body>
+    <ul>
+        <li>안녕하세요.</li>
+        <li>안녕하세요.</li>
+    </ul>
+    <form>
+        <p>댓글</p>
+        <input type="text" name="message" id="message">
+        <button>작성하기</button>
+    </form>
+    <script>
+        // 추가하기
+        document.querySelector("form").addEventListener("submit",function(){
+            event.preventDefault();
+            comm.push(new Comment(this.message.value));
+            list();
+        })
+    </script>
+</body>
+</html>
