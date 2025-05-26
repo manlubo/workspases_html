@@ -355,7 +355,13 @@ box-shadow: 8px 15px 10px 7px inset #9999;
 ##### 객체
 - var s = {} 형태로 사용
 ##### 함수
-- var fn = function (a,b){} 형태로 사용
+- 선언적 함수 : function max(a,b) {return a > b ? a : b;}
+- 익명 함수 : var min = function(a,b) {return a < b ? a : b;}
+- 호이스팅(hoisting) : 본문에 선언한 함수를 실행시 최상단으로 끌어올림 (익명함수는 제외)
+- IIFE(즉시 실행 함수) : (function(a) {console.log('파라미터의 값 : ' + a)})();
+- arguments : 배열처럼 사용되는 객체 (유사배열)
+
+
 ##### undifined
 - 변수 선언 시 값 지정 안하면 나오는 값
 ##### 심볼(Symbol)
