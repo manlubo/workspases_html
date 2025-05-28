@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // click > event type, name
+        // onlick > event attr
+        // function > event handler, listener
+
+    </script>
+</head>
+<body>
+    <a href="#" onclick="console.log(this.innerHTML); alert(10)
+    ;">클릭 미</a>
+    <button id="btn1">버튼</button>
+    <button id="btn2">버튼</button>
+    <button id="btn3">버튼</button>
+    <script>
+        // const aTag = document.querySelector("a");
+        // aTag.onclick = function() { // event handler, listener
+        //     alert(this.innerHTML);
+        // }
+        const btns = document.getElementsByTagName("button");
+        console.log(btns);
+        console.log(btns.length);
+        
+        const btn = document.getElementById("btn1");
+        console.log(btn);
+        btn.onclick = _ => alert(new Date());
+        
+        const btn2 = document.querySelector("#btn2");
+        btn2.addEventListener("click", e => {alert("두번째 버튼 클릭"); alert(2); console.log(e);})
+
+
+        // btn.addEventListener("click", _ => alert(new Date()));
+        // btns[0].addEventListener("click", _ => alert("hello"));
+        
+    </script>
+</body>
+</html>

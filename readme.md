@@ -421,3 +421,35 @@ box-shadow: 8px 15px 10px 7px inset #9999;
 - new를 통해서만 객체 생성가능
 - 내부 constructor(){}를 통해 생성자를 만들 수 있으며, 자체 내부 함수 생성가능
 
+### map
+- set('키',밸류)를 통해 map객체에 추가
+- map.keys()를 통해 키값만 확인 가능
+- map.values()를 통해 밸류값만 확인 가능
+- map.entries()를 통해 키와 밸류 한쌍의 배열들로 만들 수 있음
+
+
+### 이벤트
+##### 마우스 이벤트
+- click
+- dblclick
+- mousemove
+- mouseenter
+- mouseleave
+
+##### 키 이벤트
+- keydown : 키 눌렀을 때
+- keyup : 키 떼었을 때
+- keypress : 키를 지속해서 누르고 있을 때
+
+##### 폼 이벤트
+- focus : 포커스가 적용되었을때
+- blur : 포커스 해제되었을때
+- change : 값이 변경되었을때
+- submit : submit 버튼 눌렀을 때
+- reset : reset 눌렀을때
+
+##### 로드, 기타 이벤트
+- load : 로딩이 완료되었을때 ex) window.onload
+- abort : 이미지 로딩 시 (대체 이미지 사용 시)
+- resize : 사이즈가 변경되었을 때
+- scroll : 스크롤 했을 때
