@@ -15,7 +15,7 @@ const arr = [1, 2, 3, 4, 5, 6];
 console.log(arr.filter(v => v % 2 == 0 ? v : "").map(v => v * v));
 
 
-// 20세 이상만 배열로 반환
+// 20세 이상만 이름을 배열로 반환
 const users = [
   { name: "철수", age: 17 },
   { name: "영희", age: 21 },
