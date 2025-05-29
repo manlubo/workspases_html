@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .bg {background-color: blue;}
+    </style>
+</head>
+<body>
+    <!-- 문제: jQuery를 사용해 짝수 번째 tr에만 "bg" 클래스를 추가하시오 -->
+    <table id="myTable4">
+        <tr><td>1</td></tr>
+        <tr><td>2</td></tr>
+        <tr><td>3</td></tr>
+        <tr><td>4</td></tr>
+    </table>
+
+    <script>
+    // jQuery를 사용하여 짝수 번째 tr에만 클래스 bg를 추가하시오.
+    $("tr:odd").addClass("bg");
+    </script>
+
+</body>
+</html>

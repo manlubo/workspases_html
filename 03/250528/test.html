@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>유효성 검사 연습</title>
+  <style>
+    .valid-msg {
+      color: red;
+      font-size: 12px;
+      visibility: hidden;
+    }
+    .valid-msg.active {
+      visibility: visible;
+    }
+    section {
+      border: 1px solid #ddd;
+      padding: 12px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 문제 1 -->
+  <section>
+    <h3>1. 이름 길이 검사</h3>
+    <input id="nameInput1" type="text" placeholder="이름 입력 (2자 이상)">
+    <p class="msgName1 valid-msg">이름은 2자 이상이어야 합니다.</p>
+  </section>
+
+  <!-- 문제 2 -->
+  <section>
+    <h3>2. 아이디 영소문자만</h3>
+    <input id="userIdInput2" type="text" placeholder="아이디 입력">
+    <p class="msgId2 valid-msg">영문 소문자만 가능합니다.</p>
+  </section>
+
+  <!-- 문제 3 -->
+  <section>
+    <h3>3. 비밀번호 확인</h3>
+    <input id="pwInput3" type="password" placeholder="비밀번호">
+    <input id="pwCkInput3" type="password" placeholder="비밀번호 확인">
+    <p class="msgPw3 valid-msg">비밀번호가 일치하지 않습니다.</p>
+  </section>
+
+  <!-- 문제 4 -->
+  <section>
+    <h3>4. 전체 입력 검사</h3>
+    <form id="form4">
+      <input id="inputA4" placeholder="필수 입력 A">
+      <input id="inputB4" placeholder="필수 입력 B">
+      <input id="inputC4" placeholder="필수 입력 C">
+      <button type="submit">제출</button>
+    </form>
+  </section>
+
+  <!-- 문제 5 -->
+  <section>
+    <h3>5. 이메일 유효성</h3>
+    <form id="form5">
+      <input id="emailInput5" placeholder="이메일 입력">
+      <p class="msgEmail5 valid-msg">이메일 형식이 올바르지 않습니다.</p>
+      <button type="submit">제출</button>
+    </form>
+  </section>
+
+  <script>
+    // ✅ 문제 1: 이름 길이 검사
+    // 이름이 2글자 이상이면 .msgName1의 active 클래스 제거, 아니면 추가
+    document.querySelector("#nameInput1").addEventListener("input",function() {
+        const cl = this.closest("section").querySelector(".valid-msg").classList;
+        this.value.length >= 2 ? cl.remove("active") : cl.add("active");
+    })
+
+    // ✅ 문제 2: 아이디는 영소문자만 허용
+    // 정규식 /^[a-z]+$/을 이용해 검사하고, 조건 불만족 시 .msgId2에 active 클래스 추가
+    document.querySelector("#userIdInput2").addEventListener("input",function() {
+        const cl = this.closest("section").querySelector(".valid-msg").classList;
+        /^[a-z]+$/.test(this.value) ? cl.remove("active") : cl.add("active");
+    })
+
+    // ✅ 문제 3: 비밀번호 확인
+    // #pwInput3과 #pwCkInput3의 값이 일치하지 않으면 .msgPw3에 active 클래스 추가
+    document.querySelector("#pwCkInput3").addEventListener("input",function() {
+        const pw = new RegExp(document.querySelector("#pwInput3").value); 
+        const cl = this.closest("section").querySelector(".valid-msg").classList;
+        // console.log(document.querySelector("#pwInput3").value.length);
+        // console.log(this.value.length);
+        
+        pw.test(this.value) && (document.querySelector("#pwInput3").value.length === this.value.length) ? cl.remove("active") : cl.add("active");
+    })
+
+    // ✅ 문제 4: 모든 필드 입력 여부 검사
+    // #inputA4, #inputB4, #inputC4 중 하나라도 비어있으면 제출 막고 alert 띄우기
+    // console.log(document.querySelector("#form4 button"));
+
+    document.querySelector("#form4").addEventListener("submit", e => {
+        if(document.querySelector("#inputA4").value.length === 0 || document.querySelector("#inputB4").value.length === 0 || document.querySelector("#inputC4").value.length === 0){
+            e.preventDefault();
+            alert("빈 필드가 있어 제출이 불가합니다.");
+        }
+    })
+
+    // ✅ 문제 5: 이메일 유효성 검사
+    // 이메일이 정규식을 통과하지 못하면 .msgEmail5에 active 클래스 추가하고 제출 막기
+    console.log(document.querySelector("#emailInput5").closest("form").querySelector(".valid-msg"));
+    
+    document.querySelector("#emailInput5").addEventListener("input", function() {
+          if(!/^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/.test(this.value)){
+            document.querySelector("#emailInput5").closest("form").closest("#form5").addEventListener("submit", e => e.preventDefault());
+            document.querySelector("#emailInput5").closest("form").querySelector(".valid-msg").classList.add("active");
+          } 
+          else if(/^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/.test(this.value)){
+            // document.querySelector("#emailInput5").closest("form").closest("#form5").addEventListener("submit", e => e.defaultPrevented());
+            document.querySelector("#emailInput5").closest("form").querySelector(".valid-msg").classList.remove("active");
+          }
+    })
+    
+
+
+    // document.querySelector("#form5").addEventListener("submit", e =>{
+    //     const cl = this.querySelector(".valid-msg").classList;
+    //     cl.add("active");
+    //     if(!/^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/.test(document.querySelector("#emailInput5").value)){
+    //         e.preventDefault();
+    //     }
+    // })
+
+  </script>
+</body>
+</html>

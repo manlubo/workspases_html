@@ -15,9 +15,27 @@
     <script>
         // #checkAll을 클릭하면 .terms 모든 체크박스도 체크되거나 해제되도록 하세요.
         // .terms 중 하나라도 체크가 해제되면 #checkAll도 자동으로 해제되도록 하세요.
-        document.querySelector("#checkAll").addEventListener("click", _ => {
-            document.querySelector("terms")
+        const boxs = document.querySelectorAll(".terms");
+        
+        document.querySelector("#checkAll").addEventListener("click", e => {
+            if(e.target.checked){
+                boxs.forEach(v => {
+                    v.checked = true;
+                })
+            }
+            else{
+                boxs.forEach(v => {
+                    v.checked = false;
+                })
+            }
         })
+        
+        boxs.forEach(v => v.addEventListener("click", _ =>{
+            if(!v.checked){
+                // console.log(document.querySelector("#checkAll"));
+                document.querySelector("#checkAll").checked = false;
+            }
+        })) 
 
     </script>
 </body>

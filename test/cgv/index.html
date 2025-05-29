@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>깊이 빠져 보다, CGV</title>
+    <style>
+        /* 전체 */
+        * {margin: 0; padding: 0}
+        li {list-style: none;}
+        a {text-decoration: none;}
+
+        /* 헤더 */
+        /* 헤더 상단 */
+        header>div:nth-child(1) {border-bottom: 1px solid #eee;}
+
+        header>div:nth-child(1)>div:nth-child(1) {display: flex; justify-content: space-between; max-width: 980px; margin: auto; padding: 30px 0 25px;}
+
+        header>div:nth-child(1)>div:nth-child(1)>div:nth-child(1) {display: flex; align-items: flex-end;}
+        header>div:nth-child(1)>div:nth-child(1)>div:nth-child(1) h1 > a {display: block; height: 53px; width: 117px; text-indent: -9999px; overflow: hidden; background: url(https://img.cgv.co.kr/R2014/images/common/logo/logoRed.png) no-repeat; background-size: auto 100%;}
+        header>div:nth-child(1)>div:nth-child(1)>div:nth-child(1) p {font-size: 16px; letter-spacing: 4px; margin-bottom: 2px; color: #222;}
+        
+        header>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) {display: flex; align-items: center; gap: 32px;}
+        header>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) a:first-child img {margin-top: 6px; margin-right: 16px;}
+        header>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) a:not(:first-of-type) {display: flex; flex-direction: column; align-items: center; font-size: 13px; color: #666;}
+        header>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) a:not(:first-of-type) img {width: 36px; height: 36px;}
+        
+        /* 헤더 하단 네비 */
+        header>div:nth-child(2) {border-bottom: 2px solid #fb4357; padding: 5px 0;}
+
+        header>div:nth-child(2) nav {display: flex; max-width: 980px; margin: auto; justify-content: space-between; align-items: center; height: 40px;}
+        header>div:nth-child(2) div:first-of-type {display: flex;  align-items: center; gap: 50px;}
+        header>div:nth-child(2) div:first-of-type a {display: block; height: 100%; color: #222; font-weight: bold;}
+        header>div:nth-child(2) div:first-of-type a:nth-of-type(3) {color: #fb4357;}
+        header>div:nth-child(2) form {width: 233px; height: 26px; padding: 0 10px; border-left: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;}
+        header>div:nth-child(2) form input{height: 24px; box-sizing: border-box; border: transparent; width: 200px; font-size: 16px; }
+        header>div:nth-child(2) form button{background-image: url(https://img.cgv.co.kr/R2014/images/common/ico/search.png); width: 26px; height: 26px; background-size: cover; border: none; background-color: transparent; text-indent: -9999px; overflow: hidden; cursor: pointer;}
+
+        header>div:nth-child(2) nav>div:nth-of-type(2) {display: none;}
+        
+        /* 메인 */
+        
+        /* 무비차트, 상영예정작 */
+        /* 타이틀 */
+        main > div:nth-of-type(1) {background-color: #f8f8f8; }
+        main > div:nth-of-type(1) > div{max-width: 980px; margin: auto; padding:50px 0 60px;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(1) {display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(1) > div {display: flex; gap: 16px; }
+        main > div:nth-of-type(1) > div > div:nth-of-type(1) > div a {color: #222; font-size: 26px; font-weight: bold;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(1) > div a:not(:first-of-type) {color: #666; font-weight: normal; display: flex; align-items: center; gap: 16px;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(1) > div a:not(:first-of-type)::before {content: ''; width: 1px; height: 14px; display: block; background-color: #d8d8d8;}
+        
+        main > div:nth-of-type(1) > div > div:nth-of-type(1) > a {display: block; padding: 4px 32px 4px 16px; color: #222; font-size: 14px; border: 1px solid #d8d8d8; border-radius: 9999px; height: 22px; position: relative;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(1) > a::after {content: ''; background: url(https://img.cgv.co.kr/R2014/images/common/ico/arrowR_8x13.png); position: absolute; right: 12px; display: block; width: 8px; height: 13px; bottom: 8px; background-size: contain;}
+
+        /* 카드 */
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <div>
+                <div>
+                    <h1><a href="#">CGV</a></h1>
+                    <p>DEEP DIVE SPACE</p>
+                </div>
+                <div>
+                    <a href="#"><img src="https://img.cgv.co.kr/WingBanner/2025/0409/17441769177250.jpg" alt="ad"></a>
+                    <a href="#">
+                        <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png" alt="로그인">
+                        <p>로그인</p>
+                    </a>
+                    <a href="#">
+                        <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png" alt="회원가입">
+                        <p>회원가입</p>
+                    </a>
+                    <a href="#">
+                        <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png" alt="MY CGV">
+                        <p>MY CGV</p>
+                    </a>
+                    <a href="#">
+                        <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginCustomer.png" alt="고객센터터">
+                        <p>고객센터</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <nav>
+                <div>
+                    <a href="#">영화</a>
+                    <a href="#">극장</a>
+                    <a href="#">예매</a>
+                    <a href="#">스토어</a>
+                    <a href="#">이벤트</a>
+                    <a href="#">혜택</a>
+                </div>
+
+                <div>
+                    <ul>
+                        <li><a href="#">영화</a></li>
+                        <li><a href="#">무비차트</a></li>
+                        <li><a href="#">아트하우스</a></li>
+                        <li><a href="#">ICECON</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">극장</a></li>
+                        <li><a href="#">CGV 극장</a></li>
+                        <li><a href="#">특별관</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">예매</a></li>
+                        <li><a href="#">빠른예매</a></li>
+                        <li><a href="#">상영스케줄</a></li>
+                        <li><a href="#">English Ticketing</a></li>
+                        <li><a href="#">English Schedule</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">스토어</a></li>
+                        <li><a href="#">패키지</a></li>
+                        <li><a href="#">영화관람권</a></li>
+                        <li><a href="#">기프트카드</a></li>
+                        <li><a href="#">콤보</a></li>
+                        <li><a href="#">팝콘</a></li>
+                        <li><a href="#">음료</a></li>
+                        <li><a href="#">스낵</a></li>
+                        <li><a href="#">씨네샵</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">SPECIAL</a></li>
+                        <li><a href="#">영화/예매</a></li>
+                        <li><a href="#">멤버십/CLUB</a></li>
+                        <li><a href="#">CGV 극장별</a></li>
+                        <li><a href="#">제휴할인</a></li>
+                        <li><a href="#">당첨자 발표</a></li>
+                        <li><a href="#">종료된 이벤트</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">혜택</a></li>
+                        <li><a href="#">CGV 할인정보</a></li>
+                        <li><a href="#">CLUB 서비스</a></li>
+                        <li><a href="#">VIP 라운지</a></li>
+                    </ul>
+                </div>
+                <form>
+                    <input type="text" value="미야자키 하야오: 자연의 영혼">
+                    <button>검색</button>
+                </form>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <a href="#">무비차트</a>
+                        <a href="#">상영예정작</a>
+                    </div>
+                    <a href="#">전체보기</a>
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <div>
+                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000089/89629/89629_320.jpg" alt="">
+                                <div>
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </div>
+                            </div>
+                            <p>미션 임파서블: 파이널 레코닝</p>
+                            <div>
+                                <p>97%</p>
+                                <p>예매율 21.0%</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000089/89629/89629_320.jpg" alt="">
+                                <div>
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </div>
+                            </div>
+                            <p>미션 임파서블: 파이널 레코닝</p>
+                            <div>
+                                <p>97%</p>
+                                <p>예매율 21.0%</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000089/89629/89629_320.jpg" alt="">
+                                <div>
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </div>
+                            </div>
+                            <p>미션 임파서블: 파이널 레코닝</p>
+                            <div>
+                                <p>97%</p>
+                                <p>예매율 21.0%</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000089/89629/89629_320.jpg" alt="">
+                                <div>
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </div>
+                            </div>
+                            <p>미션 임파서블: 파이널 레코닝</p>
+                            <div>
+                                <p>97%</p>
+                                <p>예매율 21.0%</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000089/89629/89629_320.jpg" alt="">
+                                <div>
+                                    <a href="#">상세보기</a>
+                                    <a href="#">예매하기</a>
+                                </div>
+                            </div>
+                            <p>미션 임파서블: 파이널 레코닝</p>
+                            <div>
+                                <p>97%</p>
+                                <p>예매율 21.0%</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </main>
+    <footer></footer>
+</body>
+</html>

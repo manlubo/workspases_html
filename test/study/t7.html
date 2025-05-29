@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form7">
+    <input id="fieldA7">
+    <input id="fieldB7">
+    <button type="submit">제출</button>
+    </form>
+
+    <script>
+        
+    // form 제출 시 fieldA7 또는 fieldB7가 비어있으면 제출을 막고 alert를 띄우시오.
+    console.log();
+    
+    document.querySelector("form").addEventListener("submit",e => {
+        if(document.querySelector("#fieldA7").value == "" || document.querySelector("#fieldB7").value == ""){
+            e.preventDefault();
+            alert("인풋 입력해주세요");
+        }
+    })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {visibility: hidden;}
+        .active {visibility: visible;}
+    </style>
+</head>
+<body>
+    <!-- HTML 참고 구조 -->
+    <input id="email5" type="text" placeholder="이메일 입력">
+    <p class="msg5 valid-msg">이미 등록된 이메일입니다.</p>
+    <script>
+        const existingEmails = ["test@example.com", "user@naver.com", "admin@gmail.com"];
+        // input에 입력 중인 이메일이 existingEmails에 포함되면 .msg5에 active 클래스 추가 , 아니면 제거
+
+        document.querySelector("#email5").addEventListener("input",e => {
+            let i = 0;
+            existingEmails.forEach(v => {
+                if(e.target.value === v){
+                    document.querySelector("p").classList.add("active");
+                    i++;
+                }
+                else if(i < 1){
+                    document.querySelector("p").classList.remove("active");
+                }
+            })
+        })
+    </script>
+</body>
+</html>
