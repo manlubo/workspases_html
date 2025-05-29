@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML 참고 구조 -->
+    <p id="totalPrice"></p>
+    <script>
+        const cart = [
+            { name: "노트북", price: 1200000, qty: 1 },
+            { name: "키보드", price: 150000, qty: 2 },
+            { name: "마우스", price: 50000, qty: 3 },
+        ];
+        console.log(cart.reduce((p,c) => {p + c.qty * c.price},0));
+        
+        // document.querySelector("#totalPrice").innerHTML = `${}원`
+
+    </script>
+</body>
+</html>

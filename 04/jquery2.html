@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        table {border-collapse: collapse; margin: 0 auto; width: 800px;}
+        table, td{border: 1px solid black;}
+        td{padding: 16px;}
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </table>
+    <script>
+        // 짝수번쨰 행의 배경색 : 회색
+        // 홀수번째 행의 배경색 : 노란색
+        // $("tr").css({background:'gray'}).filter(":even").css({background:'yellow'});
+        // $("td").css({color:'red'}).filter(":even").css({color:'orange'});
+
+        $("table *")
+            .filter("tr").css({background:'gray'})
+                .filter(":even").css({background:'yellow'})
+            .end()
+        .end()
+            .filter("td").css({color:'red'})
+                .filter("td:nth-child(odd)").css({color:'orange'});
+
+    </script>
+</body>
+</html>

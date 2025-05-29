@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        console.log(1, document.body, document.querySelector("h2"));
+    </script>
+    <script>
+        window.onload = _ => console.log(1.5, document.body, document.querySelector("h2"));
+        $(document).ready(_ => console.log("ready1"));
+        $().ready(_ => console.log("ready2"));
+        $(_ => console.log("ready3"));
+    </script>
+</head>
+<body>
+    <script>
+        console.log(2, document.body, document.querySelector("h2"));
+    </script>
+    <script>
+        window.onload = _ => console.log(2.2, document.body, document.querySelector("h2"));
+    </script>
+    <script>
+        window.addEventListener("load", _ => console.log(2.5, document.body, document.querySelector("h2"))) ;
+    </script>
+    <h2>글자</h2>
+    <script>
+        console.log(3, document.body, document.querySelector("h2"));
+    </script>
+</body>
+</html>

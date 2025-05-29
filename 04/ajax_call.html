@@ -10,16 +10,35 @@
     <ul>
     </ul>
     <script>
-        const xhr = new XMLHttpRequest();
-
+        
         document.querySelector("button").addEventListener("click", e =>{
-            xhr.open("GET", "students.xm");
-            xhr.send();
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "students.xml");
+            
+            xhr.onreadystatechange = _ => {
+                // console.log(xhr.status);
+                // console.log(xhr.readyState);
+                if(xhr.status === 200 && xhr.readyState === 4){
+                    console.log(xhr.responseXML);
+                    const data = xhr.responseXML;
+                    console.log(data.querySelectorAll("student"));  
+                    
+                    let str = "";
+                    data.querySelectorAll("student").forEach(s => {
+                        str += `<li> 
+                            ${s.querySelector("no").innerHTML}
+                            ${s.querySelector("name").innerHTML}
+                            ${s.querySelector("score").innerHTML}
+                            </li>`;
+                    });
 
-            console.log(xhr);
-            
-            
+                    document.querySelector("ul").innerHTML += str;
+                }
+            }
+            xhr.send();
         });
+            
+                
     </script>
 </body>
 </html>
