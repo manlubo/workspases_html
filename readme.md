@@ -453,3 +453,35 @@ box-shadow: 8px 15px 10px 7px inset #9999;
 - abort : 이미지 로딩 시 (대체 이미지 사용 시)
 - resize : 사이즈가 변경되었을 때
 - scroll : 스크롤 했을 때
+
+### window
+##### history
+- forward : 앞으로가기
+- back : 뒤로가기
+
+##### location
+- 주소창과 관련된 것들
+- reload : 새로고침
+
+##### document
+- 바디와 관련된 것
+
+##### screen
+- 화면에서 보여주는 것. 넓이 등 픽셀 포함
+- 오리엔테이션 개체 : 자이로스코프(방향전환) 등
+
+##### navigator
+- 사용자의 위치정보, 블루투스 등
+
+### DOM
+##### 요소 선택
+[직접선택]
+- querySelector() : 괄호안에 요소 선택자 입력해서 선택(첫 하나만 선택)
+- querySelectorALL() : 괄호안에 요소 선택자 입력해서 선택(모두 선택)
+
+[상대위치 선택]
+- children : 하위요소를 선택
+- childNodes : 내부의 요소를 선택
+- closest : 가장 가까운 요소를 선택(형제요소는 선택 안됨)
+
+# JQuery

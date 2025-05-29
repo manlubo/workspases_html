@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>학생데이터 가져오기</button>
+    <ul>
+    </ul>
+    <script>
+        const xhr = new XMLHttpRequest();
+
+        document.querySelector("button").addEventListener("click", e =>{
+            xhr.open("GET", "students.xm");
+            xhr.send();
+
+            console.log(xhr);
+            
+            
+        });
+    </script>
+</body>
+</html>
