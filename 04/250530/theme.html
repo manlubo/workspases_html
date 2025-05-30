@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {margin: 0;}
+        ul {padding: 0; background: #ddd; margin: 0;}
+        ul li {display: inline;}
+        ul li a {text-decoration: none; display: inline-block; width: 100px; padding: 16px; text-align: center; color: #222;}
+        ul li a:hover {background-color: #ccc;}
+
+        body.dark {background-color: #222;}
+        .dark ul {background: #555;}
+        .dark ul li a{color: #ddd;}
+        .dark ul li a:hover {background: #777;}
+    </style>
+    <script>
+        $(_ =>{
+            $("button").click(_ =>{
+                // $("body").toggleClass("dark");
+                $("body").hasClass("dark") ? $("body").removeClass("dark").find("button").text("Dark Theme") : $("body").addClass("dark").find("button").text("Light Theme")
+                // $("body").is('.dark') ? $("body").removeClass("dark").find("button").text("Dark Theme") : $("body").addClass("dark").find("button").text("Light Theme");
+            });
+        })
+    </script>
+</head>
+<body class="">
+    <nav>
+        <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+        </ul>
+    </nav>
+    <button>Dark Theme</button>
+</body>
+</html>

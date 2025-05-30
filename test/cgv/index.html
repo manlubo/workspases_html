@@ -52,9 +52,26 @@
         
         main > div:nth-of-type(1) > div > div:nth-of-type(1) > a {display: block; padding: 4px 32px 4px 16px; color: #222; font-size: 14px; border: 1px solid #d8d8d8; border-radius: 9999px; height: 22px; position: relative;}
         main > div:nth-of-type(1) > div > div:nth-of-type(1) > a::after {content: ''; background: url(https://img.cgv.co.kr/R2014/images/common/ico/arrowR_8x13.png); position: absolute; right: 12px; display: block; width: 8px; height: 13px; bottom: 8px; background-size: contain;}
-
+        
         /* 카드 */
-
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul {display: flex; justify-content: space-between;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li {width: 170px; display: flex; flex-direction: column; gap: 10px;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div {width: 100%; border-radius: 8px; overflow: hidden; position: relative;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div:first-child::before {content: ''; display: block; position: absolute; top: 0; height: 100%; width: 100%; background: linear-gradient(transparent, transparent,#000c);}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div:first-child:after {content: '1'; display: block; position: absolute; font-style: italic; font-size: 50px; bottom: -16px; color: #fff; left: 10px;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div:hover:first-child::before {display: none;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div:hover:after {display: none;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div img {width: 100%;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div > div {position: absolute; width: 100%; height: 100%; background-color: #0009; top: 0; justify-content: center; flex-direction: column; align-items: center; gap: 8px; display: none;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div:hover > div {display: flex;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div > div a {font-size: 13px; padding: 8px; width: 120px; text-align: center; color: #666; background-color: #fff; border-radius: 4px;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div > div a:hover {opacity: .8;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div > div a:nth-of-type(2) {color: #fff; background-color: #fb4357;}
+        
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div:nth-of-type(2) {display: flex; justify-content: center; gap: 8px; font-size: 14px;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > p {font-size: 18px; font-weight: bold; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 4px;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div:nth-of-type(2) p:first-child {display: flex; gap: 8px; align-items: center; font-size: 14px;}
+        main > div:nth-of-type(1) > div > div:nth-of-type(2) > ul li > div:nth-of-type(2) p:first-child::after {content: ''; display: block; width: 1px; height: 14px; background: #d8d8d8;}
     </style>
 </head>
 <body>
@@ -242,6 +259,40 @@
         <div></div>
         <div></div>
     </main>
-    <footer></footer>
+    <footer>
+        <div>
+            <div>
+                <a href="#">회사소개</a>
+                <a href="#">지속가능경영</a>
+                <a href="#">IR</a>
+                <a href="#">채용정보</a>
+                <a href="#">광고/제휴/출점문의</a>
+                <a href="#">이용약관</a>
+                <a href="#">편성기준</a>
+                <a href="#">개인정보처리방침</a>
+                <a href="#">법적고지</a>
+                <a href="#">이메일주소무단수집거부</a>
+                <a href="#">윤리경영</a>
+                <a href="#">사이버감사실</a>
+            </div>
+            <div>
+                <div>
+                    <p>(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)</p>
+                    <p>대표이사 : 정종민 · 사업자등록번호 : 104-81-45690 · 통신판매업신고번호 : 2017-서울용산-0662 <a href="#">사업자정보확인</a></p>
+                    <p>호스팅사업자 : CJ올리브네트웍스 · 대표이메일 : cjcgvmaster@cj.net</p>
+                    <p>&copy; CJ CGV. All Rights Reserved</p>
+                </div>
+                <div>
+                    <select name="" id="">
+                        <option value="">계열사 바로가기</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                    <button>GO</button>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
