@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        li {list-style: none;}
+        a {color: #333; text-decoration: none;}
+        body {margin: 0; background: #eee;}
+
+
+        .gnb-wrapper { position: relative; padding-top: 1px; margin-top: 2px;}
+        .gnb-wrapper::before {content: ''; display: block; background-color:#ccc; height: 1px; top: -1px; position: absolute; width: 100%;}
+        .gnb-wrapper::after {content: ''; display: block; background-color:#fb4357; height: 2px; top: 60px; position: absolute; width: 100%;}
+
+        .gnb {position: relative; width: 980px; margin: 0 auto;}
+        .gnb > ul {padding-left: 0; }
+        .gnb > ul > li {display: block; width: 162px; float: left;}
+        .gnb > ul > li li a {font-size: 14px;}
+        .gnb > ul > li li:not(:first-child) {margin-top: 8px;}
+        .gnb > ul > li li:first-child a {font-weight: bold;}
+        .gnb > ul > li li a:hover {text-decoration: underline;}
+        .gnb > ul > li:first-of-type {width: 137px;}
+        .gnb > ul > li:last-of-type  {width: 192px;}
+        .gnb > ul > li span {position: absolute; top: 0;}
+        .gnb > ul > li:nth-of-type(1) span {left: 0px;}
+        .gnb > ul > li:nth-of-type(2) span {left: 80px;}
+        .gnb > ul > li:nth-of-type(3) span {left: 160px;}
+        .gnb > ul > li:nth-of-type(4) span {left: 240px;}
+        .gnb > ul > li:nth-of-type(5) span {left: 335px;}
+        .gnb > ul > li:nth-of-type(6) span {left: 430px;}
+        
+        .gnb > ul > li span a {display: inline-block; color: #222; text-decoration: none; font-weight: bold;}
+        .gnb > ul > li:nth-of-type(2) span a {color: #fb4357;}
+        li ul {margin-top: 20px; padding: 25px 0 0 25px;}
+        li:nth-of-type(1) ul {padding-left: 0;}
+        li ul::after {content: ''; display: block; clear: both;}
+        li ul li:nth-child(1) {padding-top: 18px;}
+
+        nav > ul > li:not(:first-child) > ul {position: relative;}
+        nav > ul > li:not(:first-child) > ul::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 45px;
+            display: block;
+            width: 1px;
+            height: 250px;
+            background-color: #eee;
+            opacity: 0.8;
+        }
+
+        .nav-bg1 {position: absolute; width: 100%; background-color: #fff; height: 60px; top: 0; border-bottom: 1px solid #aaaaaa;}
+        .nav-bg2 {position: absolute; width: 100%; background-color: #fff; height: 310px; top: 60px; border-bottom: 1px solid #aaaaaa; display: none;}
+    </style>
+    <script>
+        $(_ => {
+            $("span > a").on("mouseenter focus", _ => {
+                $("ul ul, .nav-bg2").stop().slideDown();
+            })
+            $(".nav-bg1, .nav-bg2").on("mouseleave", _ => {
+                $("ul ul, .nav-bg2").stop().slideUp();
+            })
+
+            
+        })
+    </script>
+</head>
+<body>
+    <h1>추가제목</h1>
+    <div class="gnb-wrapper">
+        <div class="nav-bg1"></div>
+        <div class="nav-bg2"></div>
+        <nav class="gnb">
+            <ul>
+                <li>
+                    <span><a href="#">영화</a></span>
+                    <ul>
+                        <li><a href="#">영화</a></li>
+                        <li><a href="#">무비차트</a></li>
+                        <li><a href="#">아트하우스</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span><a href="#">극장</a></span>
+                    <ul>
+                        <li><a href="#">극장</a></li>
+                        <li><a href="#">CGV극장</a></li>
+                        <li><a href="#">특별관</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span><a href="#">예매</a></span>                
+                    <ul>
+                        <li><a href="#">예매</a></li>
+                        <li><a href="#">빠른예매</a></li>
+                        <li><a href="#">상영스케줄</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span><a href="#">스토어</a></span>
+                    <ul>
+                        <li><a href="#">스토어</a></li>
+                        <li><a href="#">패키지</a></li>
+                        <li><a href="#">영화관람권</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span><a href="#">이벤트</a></span>
+                    <ul>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">SPECIAL</a></li>
+                        <li><a href="#">영화/예매</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span><a href="#">혜택</a></span>
+                    <ul>
+                        <li><a href="#">혜택</a></li>
+                        <li><a href="#">CGV 할인정보</a></li>
+                        <li><a href="#">CLUB 서비스</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <h1>밀려나지마라 1</h1>
+    <h1>밀려나지마라 2</h1>
+    <h1>밀려나지마라 3</h1>
+    <h1>밀려나지마라 4</h1>
+    <h1>밀려나지마라 5</h1>
+    <h1>밀려나지마라 6</h1>
+</body>
+</html>

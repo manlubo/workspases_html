@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        h1 {width: 300px; background-color: orange;}
+    </style>
     <script>
         $(_ => {
             $("div:nth-of-type(1) > button:nth-of-type(1)").click(_ => {
@@ -20,7 +23,7 @@
                 $("div:nth-of-type(2) > h1").css({color: "red"}).slideDown(3000);
             })
             $("div:nth-of-type(2) button:nth-of-type(2)").click(_ => {
-                $("div:nth-of-type(2) > h1").slideUp("fast", _ => console.log("hide done!"));
+                $("div:nth-of-type(2) > h1").slideUp("fast", _ => console.log("slideUp done!"));
             })
             $("div:nth-of-type(2) button:nth-of-type(3)").click(_ => {
                 $("div:nth-of-type(2) > h1").slideToggle();
@@ -29,7 +32,7 @@
                 $("div:nth-of-type(3) h1").fadeIn(3000);
             })
             $("div:nth-of-type(3) button:nth-of-type(2)").click(_ => {
-                $("div:nth-of-type(3) h1").fadeOut("fast", _ => console.log("hide done!"));
+                $("div:nth-of-type(3) h1").fadeOut("fast", _ => console.log("fadeOut done!"));
             })
             $("div:nth-of-type(3) button:nth-of-type(3)").click(_ => {
                 $("div:nth-of-type(3) h1").fadeToggle();

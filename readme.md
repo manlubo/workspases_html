@@ -574,3 +574,6 @@ box-shadow: 8px 15px 10px 7px inset #9999;
 - slideUp() : 높이값을 0으로 만듦
 - slideDown() : 높이값을 원래로 만듦
 - slideToggle : up, down을 합친 것
+
+##### Custom 효과
+- animate() : ex) animate({left: +=50}, "fast", "swing", function(){})

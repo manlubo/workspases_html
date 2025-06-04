@@ -611,13 +611,13 @@
         
         // console.log(document.querySelectorAll("header>div:nth-child(2) nav> div:first-of-type a"));
         document.querySelectorAll("header>div:nth-child(2) nav> div:first-of-type a").forEach(v => {
-            v.addEventListener("mouseover",function() {
+            v.addEventListener("mouseenter",function() {
                 // console.log(this);
                 document.querySelector("#sub-menu").classList.add("active");
-                   
-    
             })
         })
+                   
+    
         document.querySelector("#sub-menu").addEventListener("mouseleave", function() {
                     this.classList.remove("active");
                 })
