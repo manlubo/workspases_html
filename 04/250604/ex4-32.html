@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .outer {padding: 50px; width: 100px; height: 100px; background-color: orange;}
+        .outer div {width: 100px; height: 100px; background-color: red;}
+        
+        .outer:hover {background-color: blue;}
+    </style>
+    <script>
+        $(_ => {
+            // $(".outer").on("mouseover", _ =>{ 
+            //     $("<h1>").html("over").appendTo("body");
+            // }).on("mouseenter", _ => {
+            //     $("<h1>").html("enter").appendTo("body");        
+            // })
+
+            $(".outer").hover(_ => {
+                $("<h1>").html("enter").appendTo("body");        
+            }, _ => {
+                $("<h1>").html("leave").appendTo("body");        
+            })
+
+            $("input").on("input", _ => {
+                console.log($(event.target).val());
+            });
+
+            $("textarea").val("값 초기화");
+        }); // enter << >> leave
+    </script>
+</head>
+<body>
+    <div class="outer">
+        <div></div>
+    </div>
+    <input type="text">
+    <textarea>abcd</textarea>
+
+</body>
+</html>

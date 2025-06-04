@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        * {margin: 0; padding: 0;}
+        div {padding: 20px; margin: 20px; background: #ff6600; border: 10px solid;}
+    </style>
+    <script>
+        // jQuery의 함수 중 setter역할은 chaining이 가능
+        $(_ =>{
+            $("div").width(150).height(150);
+            console.log("width" + $("div").width());
+            console.log("height" + $("div").height());
+            console.log("innerWidth" + $("div").innerWidth()); // content + padding
+            console.log("innerHeight" + $("div").innerHeight()); 
+            console.log("outerWidth" + $("div").outerWidth()); // content + padding + border
+            console.log("outerHeight" + $("div").outerHeight());
+            console.log("outerWidth" + $("div").outerWidth(true)); // content + padding + border + margin
+            console.log("outerHeight" + $("div").outerHeight(true));
+
+            // 
+            console.log($("div").get(0));
+            console.log($("div")[0]);
+            
+            const div = $("div").get(0);
+            
+            console.log(div.clientHeight); // inner
+            console.log(div.offsetHeight); // outer
+            
+        })
+    </script>
+</head>
+<body>
+    <div>내용</div>
+</body>
+</html>

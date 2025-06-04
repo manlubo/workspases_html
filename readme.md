@@ -522,3 +522,55 @@ box-shadow: 8px 15px 10px 7px inset #9999;
 ##### 속성 메서드
 - .attr() : 괄호안의 속성의 요소를 확인 혹은 변경 할 수 있음
 - .prop() : 괄호안의 속성을 true, false로 확인 및 제어 가능
+
+##### 스크롤 관련 메서드
+- scrollTop() : scrollTop의 값을 취득 혹은 변경
+- scrollleft() : scrollleft의 값을 취득 혹은 변경
+
+##### 생성 관련 메서드
+- prepend() : 요소의 하위 첫번째에 괄호 내부의 html 추가
+- append() : 요소의 하위 마지막에 괄호 내부의 html 추가
+- before() : 요소 이전에 괄호 내부의 html 추가
+- after() : 요소 다음에 괄호 내부의 html 추가
+
+
+##### 제거 관련 메서드
+- removeAttr() : 선택한 요소의 괄호안의 속성을 제거
+- empty() : 선택한 요소의 하위요소 삭제
+- remove() : 선택한 요소를 완전 삭제
+- detach() : 선택한 요소를 잘라내기 처리
+
+##### 이벤트 연결 메서드
+- on() : 이벤트를 연결 / 이벤트 위임에 사용 ex) on("click", function(){}), on("click", "h1", function(){})
+- off() : 이벤트를 제거 ex) off("click"), off("click", function(){})
+- one() : 이벤트를 한번만 적용
+
+##### 마우스 이벤트
+- mouseenter() : 마우스를 영역에 올라갔을 때
+- mouseleave() : 마우스를 영역에서 나갔을 때
+
+##### 키보드 이벤트
+- keydown() : 키보드를 누를 때
+- keyup() : 키보드를 눌렀다 떼었을 때
+
+##### 윈도우 이벤트
+- ready() : 문서가 로드되었을 때
+- resize() : 윈도우 사이즈 변경되었을 때
+- scroll() : 스크롤바를 움직였을 때
+
+##### 폼 관련 이벤트
+- focus() : 요소에 포커스가 되었을때
+- blur() : 요소에 포커스가 해제 되었을때
+- change() : 요소의 값이 변경되었을 때
+- select() : 요소의 텍스트를 선택했을 때
+- submit() : form이 전송될 때
+- val() : 요소의 값
+- length : 요소나 요소값의 개수
+
+##### jQuery 효과
+- show() : 선택한 요소를 보여줌 ex) show(speed, easing, callback(끝나고 할 메서드))
+- hide() : 선택한 요소를 숨김
+- toggle() : show, hide를 하나로 만든 것
+- slideUp() : 높이값을 0으로 만듦
+- slideDown() : 높이값을 원래로 만듦
+- slideToggle : up, down을 합친 것

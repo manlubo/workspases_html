@@ -34,12 +34,14 @@
 
         header>div:nth-child(2) nav {display: flex; max-width: 980px; margin: auto; justify-content: space-between; align-items: center; height: 40px;}
         header>div:nth-child(2) nav> div:first-of-type {display: flex;  align-items: center; gap: 50px;}
+        header>div:nth-child(2) nav> div:first-of-type a:nth-of-type(1) {display: none;}
+        header>div:nth-child(2) nav> div:first-of-type a:nth-of-type(1) img {width: 70px; margin-top: 6px;}
         header>div:nth-child(2) nav> div:first-of-type a {display: block; height: 100%; color: #222; font-weight: bold;}
         header>div:nth-child(2) nav> div:first-of-type a:nth-of-type(3) {color: #fb4357;}
         header>div:nth-child(2) form {width: 233px; height: 26px; padding: 0 10px; border-left: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;}
         header>div:nth-child(2) form input{height: 24px; box-sizing: border-box; border: transparent; width: 200px; font-size: 16px; }
         header>div:nth-child(2) form button{background-image: url(https://img.cgv.co.kr/R2014/images/common/ico/search.png); width: 26px; height: 26px; background-size: cover; border: none; background-color: transparent; text-indent: -9999px; overflow: hidden; cursor: pointer;}
-
+        
         /* 오버 메뉴 */
         #sub-menu {position: absolute; width: 100%; max-width: 1920px; left: 0; padding: 40px 0; background-color: #fff; border-bottom: 1px solid #ccc; z-index: 1; top: -200px; transition: ease-out .3s;}
         #sub-menu > div {display: flex; align-items: flex-start; max-width: 980px; margin: auto;}
@@ -214,6 +216,7 @@
         <div>
             <nav>
                 <div>
+                    <a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/logo/logoWhite.png" alt="cgv"></a>
                     <a href="#">영화</a>
                     <a href="#">극장</a>
                     <a href="#">예매</a>
@@ -591,6 +594,12 @@
         </div>
     </footer>
     <script>
+        // 스크롤
+        console.log(this.screen);
+        screen.addEventListener("scroll",function(){
+            
+        })
+
         // 기본 검색어 삭제
         document.querySelector("header>div:nth-child(2) form input").addEventListener("click", function() {
             this.value = "";
@@ -600,10 +609,10 @@
         
         // nav 에 오버시 리스트 보이게하기
         
-        console.log(document.querySelectorAll("header>div:nth-child(2) nav> div:first-of-type a"));
+        // console.log(document.querySelectorAll("header>div:nth-child(2) nav> div:first-of-type a"));
         document.querySelectorAll("header>div:nth-child(2) nav> div:first-of-type a").forEach(v => {
             v.addEventListener("mouseover",function() {
-                console.log(this);
+                // console.log(this);
                 document.querySelector("#sub-menu").classList.add("active");
                    
     
