@@ -22,13 +22,25 @@
                         if(!data) return;
                         let str = '';
                         for(let r of data) {
+                            let num = r.rating / 2;
+                            let star = "";
+                            for(let i = 0; i < 5; i++){
+                                if(num >= 1){
+                                    star +=  `<i class="fa-solid fa-star"></i>`;
+                                    num--;
+                                }
+                                else if(num > 0){
+                                    star += `<i class="fa-regular fa-star-half-stroke"></i>`;
+                                    num--;
+                                }
+                                else{
+                                    star += `<i class="fa-regular fa-star"></i>`;
+                                }
+                            }
+
                             str += `<li class="list-group-item ps-5 profile-img" data-rno="${r.rno}">
                                     <p class="rating d-flex align-items-center">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-regular fa-star-half-stroke"></i>
-                                        <i class="fa-regular fa-star"></i>
+                                        ${star}
                                         <span class="ms-2">${r.rating}</span>
                                     </p>
                                     <p class="small text-secondary">
