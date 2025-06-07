@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; list-style: none; text-decoration: none;}
+        body {overflow-x: hidden;}
+
+        /* header */
+        header {display: flex; justify-content: space-between; padding: 0 100px; align-items: center; height: 64px; background-color: #fff; max-width: 1920px; position: fixed; width: 100%; box-sizing: border-box; top: 0; z-index: 1000;}
+        header > div {display: flex; align-items: center;}
+        header a {color: #000; padding: 0 10px; font-size: 17px;}
+        header a:hover {text-decoration: underline;}
+        header > div > a:first-of-type {text-indent: -9999px; width: 203px; height: 20px; background: url("https://recruit.snowcorp.com/share/tmplat/snow/img/logo_snow.svg") no-repeat; background-size: contain;}
+
+        /* banner */
+        main > .banner-area {margin-top: 64px;}
+        
+
+        /* job */
+        main > .jobs-area {padding: 80px 0; display: flex; flex-direction: column; align-items: center; gap: 40px;}
+        main > .jobs-area > h3 {font-size: 28px; color: #000;}
+        main > .jobs-area > a {font-size: 30px; color: #fff; padding: 20px 60px; background-color: #00cdf5; border-radius: 999px;}
+
+        /* teams */
+        main > .teams-area {margin: 120px 0 80px;}
+        main > .teams-area > div, main > .teams-area > ul > li > a > div, .people-area > div:first-of-type, main > .benefits-area > div:first-of-type {max-width: 1200px; margin: 0 auto;}
+        main > .teams-area > div > h2, main > .people-area > div:first-of-type > h2, main > .benefits-area > div:first-of-type > h2 {font-size: 64px; margin-bottom: 20px;}
+        main > .teams-area > div > div, main > .people-area > div:first-of-type > div, main > .benefits-area > div:first-of-type > div {display: flex; justify-content: space-between;}
+        main > .teams-area > div > div > p, .people-area > div:first-of-type > div > p, main > .benefits-area > div:first-of-type > div > p {font-size: 22px;}
+        main > .teams-area > div > div > a, .people-area > div:first-of-type > div > a, main > .benefits-area > div:first-of-type > div > a {font-size: 16px; color: #000; display: flex; align-items: center; gap: 12px;}
+        main > .teams-area > div > div > a::after, .people-area > div:first-of-type > div > a::after, main > .benefits-area > div:first-of-type > div > a::after {content: ''; display: block; width: 7px; height: 12px; margin-top: 4px; background: url("https://recruit.snowcorp.com/share/tmplat/snow/img/main/ico_more_arrow.png"); background-size: 7px 12px;}
+
+        main > .teams-area > ul {margin-top: 70px;}
+        main > .teams-area > ul a {display: block;}
+        main > .teams-area > ul a:hover {background-color: #ebebeb;}
+        main > .teams-area > ul a > div {display: flex; align-items: center;}
+        main > .teams-area > ul a > div > p {width: 100%; color: #000; padding: 20px 0 20px 15px; font-size: 22px; line-height: 60px;}
+        main > .teams-area > ul a > div > p:first-of-type {font-size: 38px; padding-left: 0;}
+
+        /* people */
+        main > .people-area {padding-top: 100px;}
+        main > .people-area > div > div:nth-of-type(2) {margin-top: 60px; display: flex; flex-direction: column;}
+        main > .people-area > div > div:nth-of-type(2) > div:first-of-type {width: 100%; height: 625px; position: relative;}
+        main > .people-area > div > div:nth-of-type(2) > div:first-of-type ul {width: 10000px; display: flex; gap: 30px; position: absolute; transform: translateX(0px);}
+        main > .people-area > div > div:nth-of-type(2) > div:first-of-type ul li {max-width: 1100px;}
+        main > .people-area > div > div:nth-of-type(2) > div:first-of-type ul li div {height: 520px; max-width: 1100px; overflow: hidden; margin-bottom: 30px;}
+        main > .people-area > div > div:nth-of-type(2) > div:first-of-type ul li div img {width: 100%;  display: block; transform: translateY(-110px);}
+        main > .people-area > div > div:nth-of-type(2) > div:first-of-type ul li p {font-size: 25px; color: #000;}
+        main > .people-area > div > div:nth-of-type(2) > div:first-of-type ul li span {font-size: 16px; margin-top: 16px;}
+        main > .people-area > div > div:nth-of-type(2) > div:first-of-type ul li span:nth-of-type(2) {font-size: 16px; margin-top: 16px;}
+        main > .people-area > div > div:nth-of-type(2) > div:first-of-type ul li span:nth-of-type(2)::before {content: ''; display: inline-block; width: 1px; height: 10px; background-color: #000; margin: 0 8px 1px;}
+        main > .people-area > div > div:nth-of-type(2) > div:last-of-type {display: flex; justify-content: end; margin-top: 40px; gap: 10px;}
+        main > .people-area > div > div:nth-of-type(2) > div:last-of-type button {width: 33px; height: 33px; border: none; background-color: transparent; background-image: url("https://recruit.snowcorp.com/share/tmplat/snow/img/sp_pc.png"); text-indent: -9999px; overflow: hidden; background-position: -113px 33px; background-size: 328px 205px; cursor: pointer;}
+        main > .people-area > div > div:nth-of-type(2) > div:last-of-type button:first-of-type {background-position: -224px 33px;}
+        
+        /* Benefits */
+        main > .benefits-area {padding-top: 110px;}
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="#">SNOW Careers</a>
+            <a href="#">Teams</a>
+            <a href="#">People</a>
+            <a href="#">Benefits</a>
+        </div>
+        <nav>
+            <a href="#">Jobs</a>
+            <a href="#">Login</a>
+            <a href="#">FAQ</a>
+        </nav>
+    </header>
+    <main>
+        <div class="banner-area">
+            <video autoplay="" muted="" playsinline="" loop="">
+                <source src="https://recruit.pstatic.net/cdn-vod/snow/SNOW_careers.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="jobs-area">
+            <h3>스노우와 함께할 인재를 기다립니다.</h3>
+            <a href="#">View Careers</a>
+        </div>
+        <div class="teams-area">
+            <div>
+                <h2>Teams</h2>
+                <div>
+                    <p>서로 다른 사람들이 모여 한 방향으로 나아갑니다.</p>
+                    <a href="#">More</a>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <div>
+                            <p>Tech</p>
+                            <p>글로벌 No.1 혁신 서비스를 만듭니다</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div>
+                            <p>Design</p>
+                            <p>새로운 사용자 경험을 디자인합니다</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div>
+                            <p>Service & Business</p>
+                            <p>일상을 재미있고 편리하게 소통할 수 있게 합니다</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div>
+                            <p>Corporate</p>
+                            <p>서비스도, 사람도 '지속가능한 성장'을 할 수 있도록 지원합니다</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="people-area">
+            <div>
+                <h2>People</h2>
+                <div>
+                    <p>변화를 주도하는 동료들과 함께, 스노우는 빠르게 성장하고 있습니다.</p>
+                    <a href="#">More</a>
+                </div>
+                <div>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <img src="https://recruit.snowcorp.com/share/tmplat/snow/img/slide/people/img_slide2_1.jpg" alt="">
+                                    </div>
+                                    <p>더 넓은 시야로 아키텍처를 설계할 수 있는 경험</p>
+                                    <p><span>Back-end</span><span>김태호</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <img src="https://recruit.snowcorp.com/share/tmplat/snow/img/slide/people/img_slide2_2.jpg" alt="">
+                                    </div>
+                                    <p>즐겁고 행복할 때 사용하는 서비스를 만든다는 것</p>
+                                    <p><span>Design</span><span>이근실, 최지인</span></p>
+                                </a>
+                            </li>
+                            
+                        </ul>
+
+                    </div>
+                    <div>
+                        <button>prev</button>
+                        <button>next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="benefits-area">
+            <div>
+                <h2>Benefits</h2>
+                <div>
+                    <p>스노우의 일하는 문화는 계속 진화합니다</p>
+                    <a href="#">More</a>
+                </div>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="https://recruit.snowcorp.com/share/tmplat/snow/img/main/benefits/img_01.png" alt="">
+                            <p>Financial Wellbeing</p>
+                            <p>회사의 미래가치와 성과를 함께 나누고,<br>생활의 안정을 지원합니다.</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

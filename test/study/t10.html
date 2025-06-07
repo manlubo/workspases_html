@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Jake's 복습 문제 세트</title>
+  <style>
+    .warn { color: red; }
+    .bold { font-weight: bold; }
+    .highlight { background: yellow; }
+    .hidden { display: none; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <h1 id="main-title">코딩 테스트</h1>
+
+  <input type="text" id="name" placeholder="이름 입력">
+  <button id="btn-sayhi">인사하기</button>
+  <div id="output"></div>
+
+  <ul id="product-list">
+    <li data-price="1000">상품 A</li>
+    <li data-price="2000">상품 B</li>
+    <li data-price="3000">상품 C</li>
+  </ul>
+
+  <button id="btn-hide">숨기기</button>
+  <button id="btn-show">보이기</button>
+
+  <div id="color-box" style="width:100px;height:100px;background:blue;"></div>
+  <button id="btn-yellow">노란색 변경</button>
+
+  <a href="https://google.com" id="link-google">구글로 가기</a>
+
+  <hr>
+  <h2>정답 스크립트 작성 영역</h2>
+  <script>
+    /******************** 문제 1 ********************
+    #btn-sayhi 클릭 시, input 값이 있으면
+    #output에 "안녕하세요, [이름]님!" 출력하라.
+    단, 보안상 .textContent 또는 .text()만 사용할 것.
+    ****************************************************/
+    document.querySelector("#btn-sayhi").addEventListener("click", _ =>{
+        if(document.querySelector("input").value.length > 0){
+            document.querySelector("#output").textContent = `안녕하세요, [${document.querySelector("input").value}]님!`;
+        }
+    })
+
+    // $("#btn-sayhi").click(_ => {
+    //     if($("input").val().length > 0){
+    //         $("#output").text(`안녕하세요, [${$("input").val()}]님!`);
+    //     }
+    // })
+
+    /******************** 문제 2 ********************
+    #product-list의 <li> 중 data-price가 2000인 항목의
+    텍스트 색상을 파란색으로 바꾸되, dataset 접근으로 처리하라.
+    ****************************************************/
+   document.querySelectorAll("#product-list li").forEach(v => {
+       if(v.getAttribute("data-price") == 2000){
+           v.style.color = "blue";
+       }
+   })
+    // $("#product-list li").filter((i, v) => v.dataset.price == 2000).css("color", "blue");
+    
+
+    /******************** 문제 3 ********************
+    #btn-hide 클릭 시 #product-list를 숨기되,
+    display 속성은 인라인 style에 없더라도 제대로 감지하여 처리할 것.
+    ****************************************************/
+    document.querySelector("#btn-hide").addEventListener("click", _ => {
+        if(getComputedStyle(document.querySelector("#product-list")).display != "none"){
+            document.querySelector("#product-list").style.display = "none";
+            console.log("none");
+        }
+    })
+
+    // $("#btn-hide").click(_ => {
+    //     $("#product-list").hide();
+    //     console.log("hide");
+    // })
+
+    /******************** 문제 4 ********************
+    #btn-show 클릭 시 #product-list를 보이게 하고,
+    클래스 bold를 추가할 것 (.style.fontWeight 사용 금지)
+    ****************************************************/
+    document.querySelector("#btn-show").addEventListener("click",_ => {
+        if(getComputedStyle(document.querySelector("#product-list")).display === "none"){
+            document.querySelector("#product-list").style.display = "block";
+            document.querySelector("#product-list").classList.add("bold")
+            console.log("block");
+        }
+    })
+
+    // $("#btn-show").click(_ => {
+    //     $("#product-list").show().addClass("bold");
+    //     console.log("show");
+    // })
+
+    /******************** 문제 5 ********************
+    #link-google 클릭 시 기본 이동을 막고
+    새 창으로 열리도록 하라.
+    ****************************************************/
+    document.querySelector("#link-google").addEventListener("click", function(e){
+        e.preventDefault();
+        window.open(`${this.getAttribute("href")}`,"_blank");
+    })
+
+    // $("#link-google").click(function(e) {
+    //     e.preventDefault();
+    //     open(`${$(this).attr("href")}`, "_blank");
+    // })
+
+
+    /******************** 문제 6 ********************
+    #btn-yellow 클릭 시 #color-box의 배경을 노랑으로 변경하고,
+    1초 후 다시 파랑으로 되돌릴 것. jQuery .delay() 사용 금지.
+    ****************************************************/
+
+    /******************** 문제 7 ********************
+    input 값이 5자 이상 입력되면 #output에 "이름이 너무 깁니다"를 출력하고,
+    그 외의 경우에는 비워야 한다. 중복 출력 방지할 것.
+    ****************************************************/
+
+    /******************** 문제 8 ********************
+    #product-list의 <li> 클릭 시 해당 요소에만
+    클래스 highlight를 토글하라. 이벤트 위임 방식 필수.
+    ****************************************************/
+
+    /******************** 문제 9 ********************
+    페이지 로드 후 2초 뒤 #main-title을 슬라이드 업(slideUp) 하라.
+    ****************************************************/
+
+    /******************** 문제 10 ********************
+    모든 #product-list의 <li> 요소에 대해
+    기존 텍스트 뒤에 (가격원)을 추가하라.
+    예: 상품 A (1000원)
+    ****************************************************/
+  </script>
+</body>
+</html>
