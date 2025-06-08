@@ -58,7 +58,7 @@
     텍스트 색상을 파란색으로 바꾸되, dataset 접근으로 처리하라.
     ****************************************************/
    document.querySelectorAll("#product-list li").forEach(v => {
-       if(v.getAttribute("data-price") == 2000){
+       if(v.dataset.price == 2000){
            v.style.color = "blue";
        }
    })
@@ -117,26 +117,77 @@
     #btn-yellow 클릭 시 #color-box의 배경을 노랑으로 변경하고,
     1초 후 다시 파랑으로 되돌릴 것. jQuery .delay() 사용 금지.
     ****************************************************/
-
+    // js
+    document.querySelector("#btn-yellow").addEventListener("click", _ => {
+      document.querySelector("#color-box").style.background = "yellow";
+      setTimeout(_ => {
+        document.querySelector("#color-box").style.background = "blue";
+      }, 1000)
+    })
+    // jq
+    $("#btn-yellow").click(_ => {
+      $("#color-box").css({background: "yellow"});
+      setTimeout(_ => {
+        $("#color-box").css({background: "blue"});
+      }, 1000);
+    })
     /******************** 문제 7 ********************
     input 값이 5자 이상 입력되면 #output에 "이름이 너무 깁니다"를 출력하고,
     그 외의 경우에는 비워야 한다. 중복 출력 방지할 것.
     ****************************************************/
+  //  js
+    document.querySelector("input").addEventListener("keyup",function() {
+      if(this.value.length >= 5 && document.querySelector("#output").textContent.length === 0){
+        document.querySelector("#output").append("이름이 너무 깁니다.");
+      }
+      else if (this.value.length < 5 && document.querySelector("#output").textContent.length > 0){
+        document.querySelector("#output").textContent = "";
+      }
+    })
+    // jq
+    // $("input").keyup(function(){
+    //   if($(this).val().length >= 5 && $("#output").text().length === 0){
+    //     $("#output").text("이름이 너무 깁니다.");
+    //   }
+    //   else if($(this).val().length < 5 && $("#output").text().length > 0){
+    //     $("#output").text("");
+    //   }
+    // })
 
     /******************** 문제 8 ********************
     #product-list의 <li> 클릭 시 해당 요소에만
     클래스 highlight를 토글하라. 이벤트 위임 방식 필수.
     ****************************************************/
-
+  //  js
+    document.querySelector("#product-list").addEventListener("click", function(e){
+      if(e.target.tagName === "LI"){
+        e.target.classList.toggle("highlight");
+      }
+    })
+    // jq
+    $("#product-list").on("click", "li", function(){
+      $(this).toggleClass("highlight");
+    })
+    
     /******************** 문제 9 ********************
     페이지 로드 후 2초 뒤 #main-title을 슬라이드 업(slideUp) 하라.
     ****************************************************/
-
+    // jq
+    $(_ => {
+      setTimeout(_ => {
+        $("#main-title").slideUp();
+      },2000)
+    })
     /******************** 문제 10 ********************
     모든 #product-list의 <li> 요소에 대해
     기존 텍스트 뒤에 (가격원)을 추가하라.
     예: 상품 A (1000원)
     ****************************************************/
+//  js
+    // document.querySelectorAll("#product-list li").forEach(v => {v.append(`(${v.dataset.price}원)`)});
+//  jq
+    $("#product-list li").each((i, v) => v.append(`(${$(v).data("price")}원)`));
+
   </script>
 </body>
 </html>
