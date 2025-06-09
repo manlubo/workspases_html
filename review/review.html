@@ -16,10 +16,11 @@
     </style>
     <script>
         $(_ => {
+            const url = "http://np.gitbaby.com:8080/review_api/review/";
             const modal = new bootstrap.Modal($("#reviewModal").get(0), {})
             function list() {
                 $.ajax({
-                     url : "http://localhost:8080/review_api/review/list",
+                     url : url + "list",
                     success : function(data){
                         if(!data) return;
                         let str = '';
@@ -83,7 +84,7 @@
                 console.log("글쓰기 전송");
 
                 $.ajax({
-                    url : "http://localhost:8080/review_api/review/",
+                    url,
                     method : 'POST',
                     data : JSON.stringify(obj),
                     success : function(data) {
@@ -98,7 +99,7 @@
             $(".reviews").on("click",".btn-modify-form",function() {
                 console.log("글수정 폼");
                 const rno = $(this).closest("li").data("rno");
-                $.getJSON("http://localhost:8080/review_api/review/" + rno, function(data){
+                $.getJSON(url + rno, function(data){
                     $("#reviewModal .modal-footer button").show().eq(0).hide();
                     $("#content").val(data.content);
                     $("#writer").val(data.writer);
@@ -124,7 +125,7 @@
                 const obj = {content, writer, rating, rno};
 
                 $.ajax({
-                    url : "http://localhost:8080/review_api/review/" + rno,
+                    url : url + rno,
                     method : 'PUT',
                     data : JSON.stringify(obj),
                     success : function(data) {
@@ -146,7 +147,7 @@
                 const rno = $(this).closest("li").data("rno");
                 console.log("글 삭제 전송");
                 $.ajax({
-                    url : "http://localhost:8080/review_api/review/" + rno,
+                    url : url + rno,
                     method : 'DELETE',
                     success : function(data) {
                         if(data.result){
@@ -154,7 +155,6 @@
                         }
                     }
                 })
-
             })
         })
     </script>
@@ -219,7 +219,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="rating" class="form-label"><i class="fa-solid fa-star text-primary"></i> Rating</label>
-                            <input type="number" class="form-control" id="rating" placeholder="Enter rating" name="rating" value="5" min="1" max="5">
+                            <input type="number" class="form-control" id="rating" placeholder="Enter rating" name="rating" value="5" min="1" max="5" step="0.5">
                         </div>
                     </form>
                 </div>
