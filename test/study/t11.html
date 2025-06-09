@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>JS & jQuery 문제 세트 V3</title>
+  <style>
+    .error { color: red; }
+    .done { text-decoration: line-through; }
+    .visible { display: block; }
+    .invisible { display: none; }
+    .highlight { background-color: yellow; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <h1 id="app-title">할 일 목록</h1>
+
+  <input type="text" id="task-input" placeholder="할 일 입력">
+  <button id="add-task">추가</button>
+  <p id="error-msg" class="error invisible">내용을 입력하세요.</p>
+
+  <ul id="task-list">
+    <!-- 동적 li 추가 -->
+  </ul>
+
+  <button id="clear-all">전체 삭제</button>
+  <button id="toggle-title">제목 숨기기</button>
+
+  <div id="hover-box" style="width:100px;height:100px;background:grey;"></div>
+
+  <hr>
+  <h2>정답 작성 영역</h2>
+  <script>
+    /******************** 문제 1 ********************
+    #add-task 버튼 클릭 시 input이 비어있다면
+    #error-msg를 보여주고, 그렇지 않으면
+    #task-list에 li로 입력된 텍스트를 추가하고 에러 메시지를 숨겨라.
+    ****************************************************/
+    // js
+    // document.querySelector("#add-task").addEventListener("click",_ => {
+    //     if(document.querySelector("input").value === ""){
+    //         document.querySelector("#error-msg").style.display = "block";
+    //     }
+    //     else{
+    //         document.querySelector("#task-list").innerHTML += `<li>${document.querySelector("input").value}</li>`;
+    //         document.querySelector("#error-msg").style.display = "none";
+    //         highlight();
+    //     }
+    // })
+
+    // jq
+    $("#add-task").click(_ => {
+        if($("input").val() === ""){
+            $("#error-msg").show();
+        }
+        else{
+            $("#task-list").append(`<li>${$("input").val()}</li>`);
+            $("#error-msg").hide();
+            highjq();
+        }
+    })
+
+    /******************** 문제 2 ********************
+    li를 클릭하면 해당 항목에 'done' 클래스를 toggle 하여
+    취소선 스타일을 적용하라. (이벤트 위임으로 구현)
+    ****************************************************/
+    // js
+    // document.querySelector("ul").addEventListener("click", function(e){
+    //     if(e.target.tagName === "LI"){
+    //         e.target.classList.toggle("done");
+    //     }
+    // })
+
+    // jq
+    $("ul").on("click", e => {
+        if(e.target.tagName === "LI"){
+            $(e.target).toggleClass("done");
+        }
+    })
+
+    /******************** 문제 3 ********************
+    #clear-all 버튼 클릭 시 #task-list의 모든 항목을 제거하라.
+    ****************************************************/
+    // js
+    // document.querySelector("#clear-all").addEventListener("click", _=> {
+    //     document.querySelector("#task-list").innerHTML = "";
+    // })
+
+    // jq
+    $("#clear-all").click(_ => {
+        $("#task-list").empty();
+    })
+
+    /******************** 문제 4 ********************
+    input에 키 입력이 있을 때마다 #error-msg를 숨기도록 하라.
+    ****************************************************/
+    // js
+    // document.querySelector("input").addEventListener("keyup",_ => {
+    //     document.querySelector("#error-msg").style.display = "none";
+    // })
+
+    // jq
+    $("input").keyup(_ => {$("#error-msg").hide()});
+
+    /******************** 문제 5 ********************
+    #toggle-title 클릭 시 #app-title을 숨기거나 보이도록 toggle 하라.
+    (display를 직접 제어할 것)
+    ****************************************************/
+    // js
+    // document.querySelector("#toggle-title").addEventListener("click", _ => {    
+    //     document.querySelector("#app-title").style.display = getComputedStyle(document.querySelector("#app-title")).display === "none" ? "block" : "none"; 
+    // })
+
+    // jq
+    $("#toggle-title").click(_ =>{
+        $("#app-title").toggle();
+    })
+
+    /******************** 문제 6 ********************
+    #hover-box에 마우스를 올리면 배경색을 green으로,
+    벗어나면 다시 grey로 바꿔라.
+    ****************************************************/
+    // document.querySelector("#hover-box").addEventListener("mouseenter", _ => {
+    //     event.target.style.background = "green";
+    // })
+    // document.querySelector("#hover-box").addEventListener("mouseleave", _ => {
+    //     event.target.style.background = "grey";
+    // })
+
+    $("#hover-box").hover(function(){$(this).css({background : "green"})},function(){$(this).css({background: "grey"})})
+
+    /******************** 문제 7 ********************
+    페이지 로드 후 2초 뒤 #task-input에 포커스를 자동으로 맞춰라.
+    ****************************************************/
+    // js
+    // window.addEventListener("load",_ => {
+    //     setTimeout(_ => {
+    //         document.querySelector("#task-input").focus();
+    //     },2000)
+    // })
+    
+    // jq
+    $(_ => {
+        setTimeout(_=>{
+            $("#task-input").focus();
+        },2000)
+    })
+
+    /******************** 문제 8 ********************
+    task-list의 li 요소 중 텍스트에 '공부'가 포함된 항목에만
+    'highlight' 클래스를 추가하라.
+    ****************************************************/
+    // js
+    // const highlight = function() {document.querySelectorAll("#task-list li").forEach(v => {
+    //     if(v.textContent.includes("공부")){
+    //         v.classList.add("highlight");
+    //     }
+    // })}
+    
+    // jq
+    const highjq = function(){$("#task-list li").filter((i, v) => v.textContent.includes("공부")).addClass("highlight")};
+
+
+    /******************** 문제 9 ********************
+    task-list에 항목이 하나도 없으면 alert("목록이 비어있습니다")를 출력하라.
+    (clear-all 버튼 클릭 시 조건 검사 포함)
+    ****************************************************/
+    // js
+    // if(document.querySelector("#task-list").children.length === 0){
+    //     alert("목록이 비어있습니다");
+    // }
+    
+    // jq
+    
+    // if($("#task-list").text().trim().length === 0){
+    //     alert("목록이 비어있습니다");
+    // }
+
+
+    /******************** 문제 10 ********************
+    li 항목 위에 마우스를 올렸을 때 해당 항목만 진하게 표시되도록 하라.
+    (font-weight: bold 적용, mouseenter / mouseleave 활용)
+    ****************************************************/
+    document.querySelector("ul").addEventListener("mouseenter", function(e) {
+        
+    })
+
+  </script>
+</body>
+</html>
