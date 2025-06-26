@@ -165,37 +165,68 @@
       <div class="body flex-grow-1">
         <div class="container-lg px-4">
           <div>
+            <select class="form-select mb-4">
+              <option>전체</option>
+              <option>청소년</option>
+              <option>어르신</option>
+              <option>동물</option>
+              <option>지구</option>
+              <option>환경</option>
+              <option>장애인</option>
+              <option>사회</option>
+              <option>피드</option>
+            </select>
             <ul class="list-group small">
               <li class="list-group-item ">
                 <div class="row my-0 align-items-center">
                   <input class="form-check-input col-1 mx-2 my-0 p-0" type="checkbox" id="checkAll" name="checkAll" value="something" style="width: 20px; height: 20px;">
-                  <span class="col-1 text-center fw-bold">유저번호</span>
-                  <span class="col-2 text-center fw-bold">기관명</span>
-                  <span class="col-2 text-center fw-bold">닉네임</span>
-                  <span class="col-2 text-center fw-bold">이메일</span>
-                  <span class="col-2 text-center fw-bold">전화번호</span>
-                  <span class="col text-center fw-bold">관리</span>
+                  <span class="col-1 text-center fw-bold">글 번호</span>
+                  <span class="col-1 text-center fw-bold">카테고리</span>
+                  <span class="col-1 text-center fw-bold">제목</span>
+                  <span class="col text-center fw-bold">내용</span>
+                  <span class="col-1 text-center fw-bold">작성자</span>
+                  <span class="col-2 text-center fw-bold">목표금액</span>
+                  <span class="col-1 text-center fw-bold">등록일</span>
+                  <span class="col-1 text-center fw-bold">마감일</span>
+                  <span class="col-1 text-center fw-bold">관리</span>
                 </div>
               </li>
               
               <li class="list-group-item">
                 <div class="row my-0 align-items-center">
                   <input class="form-check-input col-1 mx-2 my-0 p-0" type="checkbox" name="check1" value="something" style="width: 20px; height: 20px;">
-                  <span class="col-1 text-center">3</span>
-                  <span class="col-2 text-center">노인복지재단</span>
+                  <span class="col-1 text-center">8</span>
+                  <span class="col-1 text-center">피드</span>
+                  <span class="col-1 text-center text-truncate"><a href="#" class="text-black"></a></span>
+                  <span class="col text-center text-truncate"><a href="#" class="text-black">어쩌구 저쩌구</a></span>
+                  <span class="col-1 text-center">전상현</span>
                   <span class="col-2 text-center"></span>
-                  <span class="col-2 text-center">noinbockji@gamil.com</span>
-                  <span class="col-2 text-center">02-234-5678</span>
-                  <div class="btn-group btn-group-sm col">
-                    <button type="button" class="btn btn-outline-secondary">승인</button>
-                    <button type="button" class="btn btn-outline-secondary">반려</button>
+                  <span class="col-1 text-center">25.06.26</span>
+                  <span class="col-1 text-center"></span>
+                  <div class="btn-group btn-group-sm col-1">
+                    <button type="button" class="btn btn-secondary">노출</button>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row my-0 align-items-center">
+                  <input class="form-check-input col-1 mx-2 my-0 p-0" type="checkbox" name="check1" value="something" style="width: 20px; height: 20px;">
+                  <span class="col-1 text-center">4</span>
+                  <span class="col-1 text-center">환경</span>
+                  <span class="col-1 text-center text-truncate"><a href="#" class="text-black">어르신들을 위해 기부해주세요.</a></span>
+                  <span class="col text-center text-truncate"><a href="#" class="text-black">어쩌구 저쩌구</a></span>
+                  <span class="col-1 text-center">노인복지재단</span>
+                  <span class="col-2 text-center">35,353,353원</span>
+                  <span class="col-1 text-center">25.06.26</span>
+                  <span class="col-1 text-center">25.07.02</span>
+                  <div class="btn-group btn-group-sm col-1">
+                    <button type="button" class="btn btn-outline-secondary">숨김</button>
                   </div>
                 </div>
               </li>
             </ul>
             <div class="mt-4">
-              <button class="btn btn-primary me-2">선택 승인</button>
-              <button class="btn btn-outline-secondary">선택 반려</button>
+              <button class="btn btn-outline-secondary">선택 삭제</button>
             </div>
 
           </div>
