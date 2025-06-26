@@ -28,13 +28,12 @@
 /* 전체 적용 */
 * {font-family: 'SUIT Variable'; list-style: none; text-decoration: none; color: var(--col-6); letter-spacing: -0.03em;}
 .container {max-width: 1120px;}
-main{min-height: calc(100vh - 285px);}
+main{min-height: calc(100vh - 285px); padding: 120px 0;}
 
 /* 헤더 네비 */
+header {background-color: #fffc; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;}
 nav a{color: var(--col-3); }
 nav a:hover {color: var(--col-main);}
-
-
 
 
 
